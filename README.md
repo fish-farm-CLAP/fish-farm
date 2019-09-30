@@ -8,3 +8,7 @@ Actual Team:
 - Paul Bennett
 
 Our project is to create a Fish Farm game. The basic structure is to have a 'fish tank' window that has animated fish and an interaction space that displays random events for the player to interact with.
+
+![Wireframes](https://github.com/fish-farm-CLAP/fish-farm/blob/development/assets/fishProjectWireframe_gamePage.png?raw=true)
+
+![Domain Model](https://github.com/fish-farm-CLAP/fish-farm/blob/development/assets/fishTank_domain_model.png?raw=true)
