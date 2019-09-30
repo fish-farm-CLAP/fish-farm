@@ -6,12 +6,13 @@ COLOR PALETTE
 #558564 MIDDLE GREEN
 #4652A6 LIBERTY
 */
-* {
+/* * {
     outline: 2px solid goldenrod; 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+} */
 body {
     background: #4652A6;
+    /* border: 15px #558564 ridge; */
 }
 header {
     /* border: 10px ridge goldenrod; */
@@ -28,21 +29,33 @@ h1 {
 #mainBodyDiv{
     width: 960px;
     height: 500px;
-    margin: auto;
-    box-shadow: 10px 10px grey, 10px 10px grey;
+    margin: 10px auto auto auto;
+    /* box-shadow: 10px 10px grey, 10px 10px grey; */
     /* border: 100px solid goldenrod; */
+    background-image: url(https://images.pexels.com/photos/2397651/pexels-photo-2397651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: 1000px;
+    font-size: 170%;
+    text-align: center;
+    text-shadow: 1px 1px white;
+    color: black;
+    border: 10px double #69EBD0; 
+    border-radius: 5px;
+    padding: 1%
 }
-div img {
+
+/* div img {
     width: 960px;
     height: 500px;
-}
+} */
 #buttonsDiv {
     width: 320px;
     margin: auto;
     text-align: center;
+    margin-bottom: 50%
 }
 button {
     background: #558564;
+    /* margin: auto; */
     width: 100px;
     height: 25px;
 }
