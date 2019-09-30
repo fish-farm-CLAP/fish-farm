@@ -14,7 +14,7 @@ Game Overview:
 
 ![Wireframes](https://github.com/fish-farm-CLAP/fish-farm/blob/development/assets/fishProjectWireframe_gamePage.png?raw=true)
 
-![Domain Model](https://github.com/fish-farm-CLAP/fish-farm/blob/development/assets/fishTank_domain_model2.png?raw=true)
+![Domain Model](https://github.com/fish-farm-CLAP/fish-farm/blob/development/assets/Domain%20Model%20v3.png)
 
 User Stories: https://docs.google.com/document/d/1j5RZY6TRFUzcjTc_3r-D8GJ6wO4n88DOJ6uwv616IDM/edit?usp=sharing
 
