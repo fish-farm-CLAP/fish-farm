@@ -1,11 +1,12 @@
+function setup() {
+  createCanvas(800, 640);
+}
 
-
-// function setup() {
-//   size(800, 640);
-// }
-
-// function draw() {
-//   strokeWeight(10);
-//   ellipse(200, 200, 800, 800);
-//   line(10, 10, 800, 800);
-// }
+function draw() {
+  if (mouseIsPressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
+}
