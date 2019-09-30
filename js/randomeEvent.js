@@ -47,8 +47,8 @@ function noFood(){
 }
 
 function zombie();
-if (fis.all < 3);
-fish.all--
+if (fish.all < 3);
+fish.all-=2;
 
 // each array will have Text what is happening "text "
 // what the affect is "incriment counter, exicute other funtions 
