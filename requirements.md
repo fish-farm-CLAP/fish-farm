@@ -30,7 +30,7 @@ Functional Requirements:
 
 Data Flow:
 	1. User enters the site.
-	2. User goes to game page from home page.
+	2. User goes to home page from game page.
 	3. Game function fires on load of the game page.
 		a. Checks for local storage
 		b. Starts new game or resumes old game
