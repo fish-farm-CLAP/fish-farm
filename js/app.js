@@ -11,6 +11,10 @@ var scoreDisplay = document.getElementById('scoreArea');
 var moneyDisplay = document.getElementById('currentMoney');
 var foodDisplay = document.getElementById('currentFood');
 
+var buyFishButton = document.getElementById('buyFish');
+var buyFoodButton = document.getElementById('buyFood');
+
+
 //Counter for how many 'ticks' have gone by between events
 var newEvent = 0;
 
@@ -43,7 +47,7 @@ function tick () {
   //Sees if it is time to sttart a new event.
   if (newEvent >= 30) {
 
-    choiceGeni();
+    //choiceGeni();
 
     newEvent = 0;
 
@@ -155,6 +159,8 @@ function displayVar() {
   foodDisplay.textContent = `Food Reserves: ${gameVariables.food}`;
 
 }
+
+
 
 //One page load either load save data or create a new game
 setUp();
