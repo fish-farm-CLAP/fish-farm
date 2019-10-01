@@ -42,6 +42,8 @@ function setUp () {
 function tick () {
 
   displayVar();
+  checkIfAllFishAreDead();
+
   //Make your fish hungey
   hunger();
 
@@ -161,6 +163,30 @@ function displayVar() {
   moneyDisplay.textContent = `Money: $${gameVariables.money}`;
   foodDisplay.textContent = `Food Reserves: ${gameVariables.food}`;
 
+}
+
+function checkIfAllFishAreDead() {
+  var numberOfDeadFish = 0;
+  //get the amount of dead fish
+  for (var i = 0; i < Fish.all.length; i++) {
+    if (Fish.all[i].isDead === true) {
+      numberOfDeadFish++;
+    }
+  }
+  //compare the amount to the total number of fish
+  if (numberOfDeadFish === Fish.all.length) {
+    gameOver();
+  }
+}
+
+function gameOver() {
+  console.log('game over!');
+  var gameArea = document.getElementById('mainGameArea');
+  var messageDisplayBox = document.createElement('article');
+  gameArea.appendChild(messageDisplayBox);
+  var youLose = document.createElement('h6');
+  youLose.textContent = 'You have o-fish-ally LOST the game!';
+  messageDisplayBox.appendChild(youLose);
 }
 
 buyFishButton.addEventListener('click', buyFish);
