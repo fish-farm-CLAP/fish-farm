@@ -1,6 +1,6 @@
 var canvasWidth = 800;
 var canvasHeight = 640;
-var fishSpeed = 2;
+var fishSpeed = 3;
 var fishLength = 100;
 var fishHeight = 50;
 
@@ -8,8 +8,9 @@ var fishHeight = 50;
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
-  backgroundImg = loadImage('https://www.leisurepro.com/blog/wp-content/uploads/2019/03/shutterstock_1174604908-1366x800@2x.jpg');
+  backgroundImg = loadImage('assets/underwater-bg.jpg');
   goldfishPic = loadImage('assets/goldfish-100px.png');
+  goldfishPicReversed = loadImage('assets/goldfish-100pxReversed.png');
 
   //fish objects made for testing
   fish1 = {
@@ -58,8 +59,10 @@ function draw() {
     }
     if (allFish[i].xSpeedMultiplier === -1) {
       allFish[i].xPosition -= fishSpeed;
+      allFish[i].image = loadImage('assets/goldfish-100pxReversed.png');
     } else {
       allFish[i].xPosition += fishSpeed;
+      allFish[i].image = loadImage('assets/goldfish-100px.png');
     }
     //////////////top and bottom edges:
     if (allFish[i].yPosition > (640 - fishHeight) || allFish[i].yPosition < 0) {
