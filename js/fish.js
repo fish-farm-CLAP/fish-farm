@@ -5,6 +5,8 @@ const fishKey = "allFish";
 
 //Array to store all fish objects
 
+var maxSaturation = 600;
+
 //Constructor Function
 var Fish = function(image) {
   //used in rendering
@@ -17,7 +19,7 @@ var Fish = function(image) {
   this.ySpeedMultiplier = -1;
 
   this.age = 0;
-  this.saturation = 300;
+  this.saturation = randomNum(maxSaturation + 100, maxSaturation - 100);
   this.hungry = false;
 
   Fish.all.push(this);
@@ -33,7 +35,7 @@ Fish.prototype.increaseAge = function() {
 //Reset the saturation level of the fish
 Fish.prototype.feedFish = function() {
 
-  this.saturation = 300;
+  this.saturation = randomNum(maxSaturation + 100, maxSaturation - 100);
   this.hungry = false;
 
 };
@@ -63,13 +65,13 @@ function hunger () {
 
   for (var i = 0; i < Fish.all.length; i++) {
 
-    Fish.all[i].saturation -= randomNum(12, 8);
+    Fish.all[i].saturation -= randomNum(15, 5);
 
     if (Fish.all[i].saturation <= 0) {
 
       //kill fish
 
-    } else if (Fish.all[i].saturation <= 50) {
+    } else if (Fish.all[i].saturation <= maxSaturation / 2) {
 
       Fish.all[i].hungry = true;
 
@@ -77,5 +79,4 @@ function hunger () {
 
   }
 
-  
 }
