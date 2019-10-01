@@ -104,12 +104,5 @@ function hunger () {
     }
 
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> acfe03c113e617f81ae4bec595f1811c97dbcd8d
-=======
-
->>>>>>> 2ffda991e4c5dc41f7f6e0baffa50d149253cabb
 }

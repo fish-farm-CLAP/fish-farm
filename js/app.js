@@ -100,7 +100,7 @@ function newFish () {
   //need more fish images
 
   //creat new fish object
-  new Fish(`../assets/${images[randomIndex]}`);
+  new Fish('../assets/gold_fish.jpg');
 
 }
 
