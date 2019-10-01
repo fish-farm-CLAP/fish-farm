@@ -20,7 +20,7 @@ var newEvent = 0;
 
 //The main game variables. Will be stored localy as the game progresses.
 var gameVariables = {
-  money: 10,
+  money: 200,
   food: 10,
   score: 0,
 };
@@ -41,6 +41,7 @@ function setUp () {
 //Controls the game loop
 function tick () {
 
+  displayVar();
   //Make your fish hungey
   hunger();
 
@@ -56,8 +57,6 @@ function tick () {
     newEvent++;
 
   }
-
-  displayVar();
 
 }
 
@@ -115,6 +114,8 @@ function newFish () {
 //Function to handle the different button events
 function buyFood () {
 
+  displayVar();
+
   if (gameVariables.money >= 30) {
 
     gameVariables.food += 15;
@@ -130,6 +131,8 @@ function buyFood () {
 
 
 function buyFish () {
+
+  displayVar();
 
   if (gameVariables.money >= 100) {
 
@@ -160,7 +163,8 @@ function displayVar() {
 
 }
 
-
+buyFishButton.addEventListener('click', buyFish);
+buyFoodButton.addEventListener('click', buyFood);
 
 //One page load either load save data or create a new game
 setUp();
