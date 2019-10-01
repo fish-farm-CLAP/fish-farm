@@ -38,8 +38,6 @@ Fish.prototype.feedFish = function() {
   this.saturation = randomNum(maxSaturation + 100, maxSaturation - 100);
   this.hungry = false;
 
-  this.
-
 };
 
 //Save the fish objects
@@ -73,7 +71,7 @@ function hunger () {
 
       //kill fish
 
-    } else if (Fish.all[i].saturation <= maxSaturation/2) {
+    } else if (Fish.all[i].saturation <= maxSaturation / 2) {
 
       Fish.all[i].hungry = true;
 
