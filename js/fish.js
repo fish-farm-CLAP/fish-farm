@@ -5,8 +5,8 @@ const fishKey = "allFish";
 
 //Array to store all fish objects
 
-var maxSaturation = 500;
-var minSaturation = 300;
+var maxSaturation = 150;
+var minSaturation = 100;
 
 //Constructor Function
 var Fish = function() {
