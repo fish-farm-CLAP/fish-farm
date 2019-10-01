@@ -48,12 +48,14 @@ function tick () {
 
 //Load any saved data from the system
 function loadGame () {
+
   var savedData = localStorage.getItem(storageKey);
 
   if (savedData !== null) {
     //load Game variables
     savedData = JSON.parse(savedData);
 
+    //Reasign all variables
     gameVariables.money = savedData.money;
     gameVariables.food = savedData.food;
     gameVariables.day = savedData.day;
@@ -74,9 +76,12 @@ function loadGame () {
 
 //Save current game to the file system
 function saveGame () {
+
   var dataSaved = JSON.stringify(gameVariables);
   localStorage.setItem(storageKey, dataSaved);
+
   saveFish();
+
 }
 
 //Create a new fish either at game start or when the user buys one
@@ -108,6 +113,7 @@ function randomNum(max, min = 0) {
   var difference = max - min - 1;
 
   return Math.round((Math.random() * difference) + min);
+
 }
 
 
