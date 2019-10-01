@@ -8,6 +8,7 @@ var fishHeight = 50;
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
+
   backgroundImg = loadImage('assets/underwater.jpg');
   goldfishPic = loadImage('assets/goldfish-100px.png');
   goldfishPicReversed = loadImage('assets/goldfish-100pxReversed.png');
@@ -17,6 +18,7 @@ function setup() {
 
 function draw() {
   image(backgroundImg, 0, 0);
+
 
   //draw each fish every frame at their x and y positions:
   for (var i = 0; i < Fish.all.length; i++) {
@@ -65,11 +67,10 @@ function draw() {
 }
 
 
-
-
 function mouseClicked() {
   console.log(mouseX, mouseY);
   //check if a fish was clicked on:
+
   for (var i = 0; i < Fish.all.length; i++) {
     if (
       mouseX > Fish.all[i].xPosition &&

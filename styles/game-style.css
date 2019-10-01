@@ -1,5 +1,49 @@
 * {
     outline: 1px solid goldenrod;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+    margin-top: 1%;
+    background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
+}
+header {
+    border: 10px outset #4652a6;
+    font-family: 'Notable', sans-serif;
+    font-size: 350%;
+    width: 400px;
+    height: 70px;
+    margin: auto;
+    text-align: center;
+    background: #216869;
+    text-shadow: 1px 1px white;
+    padding: auto;
+}
+h1 {
+    width: 230px;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+}
+#buttonsAndStats {
+    display: inline;
+} 
+button {
+    background: #216869;
+    /* margin: auto; */
+    width: 200px;
+    height: 35px;
+    font-size: 105%;
+    /* margin-left: 3px; */
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+/* #stats {
+    display: inline;
+} */
+h2 {
+    width: 5%;
+    font-size: 150%;
 }
 canvas {
     width: 960px;
@@ -7,7 +51,7 @@ canvas {
     margin: 10px auto auto auto;
     /* box-shadow: 10px 10px grey, 10px 10px grey; */
     /* border: 100px solid goldenrod; */
-    background-image: url(http://www.maharajatravels.in/wp-content/uploads/2015/02/underwater-bg.jpg);
+    background: #69EBD0;
     background-size: 990px 500px;
     font-size: 170%;
     text-align: center;
