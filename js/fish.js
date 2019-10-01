@@ -13,8 +13,8 @@ var Fish = function() {
   //used in rendering
   this.image = null;
 
-  this.xPosition = randomNum(960);
-  this.yPosition = randomNum(450);
+  this.xPosition = randomNum(850, 10);
+  this.yPosition = randomNum(395, 30);
 
   this.xSpeedMultiplier = -1;
   this.ySpeedMultiplier = -1;

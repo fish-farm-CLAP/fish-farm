@@ -76,8 +76,8 @@ function loadGame () {
   } else {
 
     //Make 2 fish at the start of the game
-    newFish();
-    newFish();
+    new Fish();
+    new Fish();
 
   }
 
@@ -126,7 +126,7 @@ function buyFish () {
   if (gameVariables.money >= 100) {
 
     gameVariables.money -= 100;
-    newFish();
+    new Fish();
 
   } else {
 
