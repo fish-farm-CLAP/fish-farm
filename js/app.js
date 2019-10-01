@@ -6,8 +6,13 @@
 
 //Global Variables
 
+//Image array
+var images = ['gold_fish.jpg'];
+
+//Counter for how many 'ticks' have gone by between events
 var newEvent = 0;
 
+//The main game variables. Will be stored localy as the game progresses.
 var gameVariables = {
   money: 10,
   food: 10,
@@ -30,8 +35,10 @@ function setUp () {
 //Controls the game loop
 function tick () {
 
+  //Make your fish hungey
   hunger();
 
+  //Sees if it is time to sttart a new event.
   if (newEvent >= 30) {
 
     //Get new event
@@ -64,6 +71,8 @@ function loadGame () {
     //load fish
     loadFish();
 
+    localStorage.removeItem(storageKey);
+
   } else {
 
     //Make 2 fish at the start of the game
@@ -87,25 +96,44 @@ function saveGame () {
 //Create a new fish either at game start or when the user buys one
 function newFish () {
   //Get a new fish image
-
+  var randomIndex = randomNum(images.length);
   //need more fish images
 
   //creat new fish object
-  new Fish('../assets/gold_fish.jpg');
+  new Fish(`../assets/${images[randomIndex]}`);
 
 }
 
 //Function to handle the different button events
 function buyFood () {
-  //remove money if there is enough
-  //add food
+
+  if (gameVariables.money >= 30) {
+
+    gameVariables.food += 15;
+    gameVariables.money -= 30;
+
+  } else {
+
+    //Tell the user they are short on cash
+
+  }
+
 }
 
 
-//Create a new event and adjust the other various values.
+function buyFish () {
 
-//Function to handle animations
-//Need tick value here
+  if (gameVariables.money >= 100) {
+
+    gameVariables.money -= 100;
+    newFish();
+
+  } else {
+
+    //Inform user they are short on cash
+
+  }
+}
 
 //Create a random number MIN MAX Inclusive
 function randomNum(max, min = 0) {
@@ -115,7 +143,6 @@ function randomNum(max, min = 0) {
   return Math.round((Math.random() * difference) + min);
 
 }
-
 
 //One page load either load save data or create a new game
 setUp();
