@@ -9,12 +9,12 @@ var maxSaturation = 700;
 var minSaturation = 500;
 
 //Constructor Function
-var Fish = function(image) {
+var Fish = function() {
   //used in rendering
-  this.image = image;
+  this.image = null;
 
-  this.positionX;
-  this.positionY;
+  this.xPosition = randomNum(850, 10);
+  this.yPosition = randomNum(395, 30);
 
   this.xSpeedMultiplier = -1;
   this.ySpeedMultiplier = -1;
@@ -22,6 +22,7 @@ var Fish = function(image) {
   this.age = 0;
   this.saturation = randomNum(maxSaturation, minSaturation);
   this.hungry = false;
+  this.isDead = false;
 
   Fish.all.push(this);
 };
@@ -57,7 +58,8 @@ Fish.prototype.feedFish = function () {
 
 function killFish (index) {
 
-  Fish.all.splice(index, 1);
+  //Fish.all.splice(index, 1);
+  Fish.all[index].isDead = true;
 
 }
 
@@ -93,7 +95,6 @@ function hunger () {
     if (Fish.all[i].saturation <= 0) {
 
       killFish(i);
-      i--;
 
     } else if (Fish.all[i].saturation <= minSaturation / 2) {
 
@@ -102,5 +103,4 @@ function hunger () {
     }
 
   }
-
 }
