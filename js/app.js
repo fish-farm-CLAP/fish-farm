@@ -6,12 +6,13 @@
 
 //Global Variables
 
+var newEvent = 0;
+
 var gameVariables = {
   money: 10,
   food: 10,
-  day: 0,
   score: 0,
-},
+};
 
 //Used to store the key at which the game information is stored
 const storageKey = 'playerScores';
@@ -20,18 +21,41 @@ const storageKey = 'playerScores';
 function setUp () {
   //see if there is a previous save if so load that
   loadGame();
-  //start the next day
-  newDay();
+
+  //Start the game loop
+  setInterval(tick, 1000);
+
+}
+
+//Controls the game loop
+function tick () {
+
+  hunger();
+
+  if (newEvent >= 30) {
+
+    //Get new event
+
+    newEvent = 0;
+
+  }else {
+
+    newEvent++;
+
+  }
+
 }
 
 //Load any saved data from the system
 function loadGame () {
+
   var savedData = localStorage.getItem(storageKey);
 
   if (savedData !== null) {
     //load Game variables
     savedData = JSON.parse(savedData);
 
+    //Reasign all variables
     gameVariables.money = savedData.money;
     gameVariables.food = savedData.food;
     gameVariables.day = savedData.day;
@@ -42,7 +66,9 @@ function loadGame () {
 
   } else {
 
-    //make new starting fish
+    //Make 2 fish at the start of the game
+    newFish();
+    newFish();
 
   }
 
@@ -50,14 +76,19 @@ function loadGame () {
 
 //Save current game to the file system
 function saveGame () {
+
   var dataSaved = JSON.stringify(gameVariables);
   localStorage.setItem(storageKey, dataSaved);
+
   saveFish();
+
 }
 
 //Create a new fish either at game start or when the user buys one
 function newFish () {
   //Get a new fish image
+
+  //need more fish images
 
   //creat new fish object
   new Fish('../assets/gold_fish.jpg');
@@ -70,19 +101,6 @@ function buyFood () {
   //add food
 }
 
-//Function to start a new 'day'
-function newDay () {
-
-  dailyUpdate();
-
-
-}
-
-//Update the game variables each day
-function dailyUpdate () {
-  gameVariables.day++;
-
-}
 
 //Create a new event and adjust the other various values.
 
@@ -90,9 +108,12 @@ function dailyUpdate () {
 //Need tick value here
 
 //Create a random number MIN MAX Inclusive
-function random(max, min = 0) {
+function randomNum(max, min = 0) {
+
   var difference = max - min - 1;
-  return (Math.random() * min) + difference;
+
+  return Math.round((Math.random() * difference) + min);
+
 }
 
 
