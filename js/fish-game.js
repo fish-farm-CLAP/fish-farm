@@ -84,17 +84,8 @@ function mouseClicked() {
       mouseY > allFish[i].yPosition &&
       mouseY < (allFish[i].yPosition + fishHeight)) 
       {
-        console.log('you clicked on a fish');
+        //the clicked on fish is allFish[i]:
+        console.log(`you clicked on fish ${allFish[i].image}`);
       }
-
-
   }
 }
-
-
-//TODO:
-//fix background image size/placement
-//fix fish size
-//make fish bounce off the edges of the screen
-//make addition/removal of fish work with constructor function
-//    add a function inside draw that draws/tracks a fish for each fish in allFish array?
