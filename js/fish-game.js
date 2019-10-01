@@ -94,4 +94,7 @@ function mouseClicked() {
       console.log('fed a fish');
     }
   }
+  
+  //update food/score/money counters
+  displayVar();
 }

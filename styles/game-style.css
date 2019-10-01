@@ -68,3 +68,10 @@ canvas {
     margin: auto;
     width: 320px;
 }
+article {
+    background-color: black;
+}
+h6 {
+    color: red;
+    font-size: 80px;
+}

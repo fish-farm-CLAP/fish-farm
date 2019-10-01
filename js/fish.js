@@ -93,15 +93,17 @@ function hunger () {
     Fish.all[i].saturation -= randomNum(20);
 
     if (Fish.all[i].saturation <= 0) {
-
       killFish(i);
-
     } else if (Fish.all[i].saturation <= minSaturation / 2) {
-
       Fish.all[i].hungry = true;
-
     }
 
   }
 
+}
+
+Fish.prototype.giveMoney = function() {
+  //show some kind of effect
+  //give the player $5 or something
+  //put this in a setInterval
 }
