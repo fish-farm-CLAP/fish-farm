@@ -6,8 +6,10 @@
 
 //Global Variables
 
-//Image array
-var images = ['gold_fish.jpg'];
+//Get the page elements that display the food/money/score
+var scoreDisplay = document.getElementById('scoreArea');
+var moneyDisplay = document.getElementById('currentMoney');
+var foodDisplay = document.getElementById('currentFood');
 
 //Counter for how many 'ticks' have gone by between events
 var newEvent = 0;
@@ -50,6 +52,8 @@ function tick () {
     newEvent++;
 
   }
+
+  displayVar();
 
 }
 
@@ -96,11 +100,11 @@ function saveGame () {
 //Create a new fish either at game start or when the user buys one
 function newFish () {
   //Get a new fish image
-  var randomIndex = randomNum(images.length);
+  //var randomIndex = randomNum(images.length);
   //need more fish images
 
   //creat new fish object
-  new Fish(`../assets/${images[randomIndex]}`);
+  new Fish();
 
 }
 
@@ -141,6 +145,14 @@ function randomNum(max, min = 0) {
   var difference = max - min - 1;
 
   return Math.round((Math.random() * difference) + min);
+
+}
+
+function displayVar() {
+
+  scoreDisplay.textContent = `Score: ${gameVariables.score}`;
+  moneyDisplay.textContent = `Money: $${gameVariables.money}`;
+  foodDisplay.textContent = `Food Reserves: ${gameVariables.food}`;
 
 }
 
