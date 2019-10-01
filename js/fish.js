@@ -30,19 +30,34 @@ Fish.prototype.increaseAge = function() {
   this.age += 10;
 };
 
+//Reset the saturation level of the fish
 Fish.prototype.feedFish = function() {
+
   this.saturation = 300;
   this.hungry = false;
+
 };
 
 //Save the fish objects
 function saveFish() {
+
   var dataToSave = JSON.stringify(Fish.all);
   localStorage.setItem(fishKey, dataToSave);
+
 }
 
 //Load the fish objects
-function loadFish() {}
+function loadFish() {
+
+  var saveData = JSON.parse(localStorage.getItem(fishKey));
+
+  for (var i = 0; i < saveData.length; i++) {
+
+    new Fish(saveData[i].image);
+
+  }
+
+}
 
 function hunger () {
 
