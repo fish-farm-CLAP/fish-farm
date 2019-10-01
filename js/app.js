@@ -41,7 +41,7 @@ function tick () {
   //Sees if it is time to sttart a new event.
   if (newEvent >= 30) {
 
-    //Get new event
+    // choiceGeni();
 
     newEvent = 0;
 
@@ -76,8 +76,8 @@ function loadGame () {
   } else {
 
     //Make 2 fish at the start of the game
-    newFish();
-    newFish();
+    new Fish();
+    new Fish();
 
   }
 
@@ -126,7 +126,7 @@ function buyFish () {
   if (gameVariables.money >= 100) {
 
     gameVariables.money -= 100;
-    newFish();
+    new Fish();
 
   } else {
 
