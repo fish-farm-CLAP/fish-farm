@@ -5,8 +5,8 @@ const fishKey = "allFish";
 
 //Array to store all fish objects
 
-var maxSaturation = 700;
-var minSaturation = 500;
+var maxSaturation = 500;
+var minSaturation = 300;
 
 //Constructor Function
 var Fish = function() {
@@ -19,7 +19,7 @@ var Fish = function() {
   this.xSpeedMultiplier = -1;
   this.ySpeedMultiplier = -1;
 
-  this.age = 0;
+  this.fed = 0;
   this.saturation = randomNum(maxSaturation, minSaturation);
   this.hungry = false;
   this.isDead = false;
@@ -31,8 +31,11 @@ var Fish = function() {
 Fish.all = [];
 
 //Increase the Age by 10 time fed
-Fish.prototype.increaseAge = function () {
-  this.age += 10;
+Fish.prototype.timesFed = function () {
+  this.fed ++;
+  if (this.fed % 3 === 0) {
+    gameVariables.money += 10;
+  }
 };
 
 //Reset the saturation level of the fish
@@ -43,6 +46,7 @@ Fish.prototype.feedFish = function () {
     this.saturation = randomNum(maxSaturation, minSaturation);
     this.hungry = false;
     gameVariables.food--;
+    this.timesFed();
 
   } else if (gameVariables.food === 0) {
 
