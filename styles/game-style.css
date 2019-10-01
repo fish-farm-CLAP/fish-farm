@@ -1,10 +1,10 @@
 * {
-    outline: 1px solid goldenrod;
+    /* outline: 1px solid goldenrod; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body {
     width: 980px;
-    margin: 0 auto;
+    margin: 2% auto auto auto;
     background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
 }
 header {
