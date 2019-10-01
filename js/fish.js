@@ -77,6 +77,5 @@ function hunger () {
 
   }
 
-  console.log(Fish.all);
-
+  
 }
