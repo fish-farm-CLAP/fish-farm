@@ -89,8 +89,9 @@ function mouseClicked() {
       mouseX < (Fish.all[i].xPosition + fishLength) &&
       mouseY > Fish.all[i].yPosition &&
       mouseY < (Fish.all[i].yPosition + fishHeight)) {
-      //the clicked on fish is Fish.all[i]:
-      console.log(`you clicked on fish ${Fish.all[i].image}`);
+      //Fish.all[i] has been clicked on, execute the code below:
+      Fish.all[i].feedFish();
+      console.log('fed a fish');
     }
   }
 }
