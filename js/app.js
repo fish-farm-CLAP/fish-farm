@@ -41,7 +41,7 @@ function tick () {
   //Sees if it is time to sttart a new event.
   if (newEvent >= 30) {
 
-    // choiceGeni();
+    choiceGeni();
 
     newEvent = 0;
 
