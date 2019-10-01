@@ -14,6 +14,8 @@ function setup() {
   goldfishPicReversed = loadImage('assets/goldfish-100pxReversed.png');
   goldfishPicDead = loadImage('assets/goldfish-100px-dead.png');
   goldfishPicDeadReversed = loadImage('assets/goldfish-100px-dead-reversed.png');
+  goldfishPicHungry = loadImage('assets/goldfish-100px-hungry.png');
+  goldfishPicReversedHungry = loadImage('assets/goldfish-100pxReversed-hungry.png');
 }
 
 function draw() {
@@ -35,11 +37,21 @@ function draw() {
 
     //move fish left or right only if it's not dead
     if ((Fish.all[i].xSpeedMultiplier === -1) && (Fish.all[i].isDead === false)) {
+      //draw the fish:
+      if (Fish.all[i].hungry === true) {
+        Fish.all[i].image = goldfishPicReversedHungry;
+      } else {
+        Fish.all[i].image = goldfishPicReversed;
+      }
       Fish.all[i].xPosition -= fishSpeed;
-      Fish.all[i].image = goldfishPicReversed;
     } else if ((Fish.all[i].xSpeedMultiplier === 1) && (Fish.all[i].isDead === false)) {
+      //draw the fish:
+      if (Fish.all[i].hungry === true) {
+        Fish.all[i].image = goldfishPicHungry;
+      } else {
+        Fish.all[i].image = goldfishPic;
+      }
       Fish.all[i].xPosition += fishSpeed;
-      Fish.all[i].image = goldfishPic;
     }
 
     //if fish hits the top or bottom it reverses direction, if it's not dead:
