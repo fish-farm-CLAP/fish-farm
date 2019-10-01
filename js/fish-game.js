@@ -9,6 +9,7 @@ var fishHeight = 50;
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   backgroundImg = loadImage('assets/underwater-bg.jpg');
+
   goldfishPic = loadImage('assets/goldfish-100px.png');
   goldfishPicReversed = loadImage('assets/goldfish-100pxReversed.png');
 
