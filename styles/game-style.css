@@ -3,7 +3,8 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body {
-    margin-top: 1%;
+    width: 980px;
+    margin: 0 auto;
     background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
 }
 header {
@@ -46,24 +47,22 @@ h2 {
     font-size: 150%;
 }
 canvas {
-    width: 960px;
-    height: 450px;
-    margin: 10px auto auto auto;
+    /* margin: 10px auto auto auto; */
     /* box-shadow: 10px 10px grey, 10px 10px grey; */
-    /* border: 100px solid goldenrod; */
     background: #69EBD0;
     background-size: 990px 500px;
-    font-size: 170%;
+    /* font-size: 170%;
     text-align: center;
     color: white;
-    text-shadow:
-    -1px -1px 0 #000,
+    /* text-shadow: */
+    /* -1px -1px 0 #000,
      1px -1px 0 #000,
     -1px  1px 0 #000,
-     1px  1px 0 #000;
-    border: 10px inset #69EBD0; 
+     1px  1px 0 #000; */ 
+    border: 10px ridge silver; 
     border-radius: 5px;
-    padding: 1%
+    /* padding: 1% */
+    margin: 0 1
 }
 #mainGameArea {
     margin: auto;
