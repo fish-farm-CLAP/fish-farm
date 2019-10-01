@@ -11,17 +11,21 @@ COLOR PALETTE
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body {
+    margin-top: 1%;
     background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
     /* border: 15px #558564 ridge; */
 }
 header {
     border: 10px outset #4652a6;
-    font-size: 450%;
+    font-family: 'Notable', sans-serif;
+    font-size: 350%;
     width: 400px;
+    height: 70px;
     margin: auto;
     text-align: center;
     background: #216869;
     text-shadow: 1px 1px white;
+    padding: auto;
 }
 h1 {
     width: 230px;
