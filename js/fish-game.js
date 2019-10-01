@@ -19,6 +19,7 @@ function setup() {
     yPosition: 0,
     xSpeedMultiplier: -1,
     ySpeedMultiplier: -1,
+    isDead: false,
   };
   fish2 = {
     image: goldfishPic,
@@ -26,6 +27,7 @@ function setup() {
     yPosition: 200,
     xSpeedMultiplier: 1,
     ySpeedMultiplier: -1,
+    isDead: true,
   };
   fish3 = {
     image: goldfishPic,
@@ -33,62 +35,73 @@ function setup() {
     yPosition: 500,
     xSpeedMultiplier: -1,
     ySpeedMultiplier: 1,
+    isDead: false,
   };
 
-  //TODO: replace allFish with the array used in fish.js
-  allFish = [fish1, fish2, fish3];
-
+  //TODO: replace Fish with the array used in fish.js
+  Fish = [fish1, fish2, fish3];
+//change to Fish.all
 
 }
 
 function draw() {
   image(backgroundImg, 0, 0);
 
-  //draw each fish:
-  for (var i = 0; i < allFish.length; i++) {
-    image(allFish[i].image, allFish[i].xPosition, allFish[i].yPosition);
+  //draw each fish every frame at their x and y positions:
+  for (var i = 0; i < Fish.length; i++) {
+    image(Fish[i].image, Fish[i].xPosition, Fish[i].yPosition);
   }
 
+  //////////////fish movement:
+  for (var i = 0; i < Fish.length; i++) {
+    //if fish hits the left or right edge of the screen reverse its direction:
+    if (Fish[i].xPosition > (800 - fishLength) || Fish[i].xPosition < 0 && (Fish[i].isDead === false)) {
+      Fish[i].xSpeedMultiplier *= -1;
+    }
+    
+    //move fish left or right only if it's not dead
+    if ((Fish[i].xSpeedMultiplier === -1) && (Fish[i].isDead === false)) {
+      Fish[i].xPosition -= fishSpeed;
+      Fish[i].image = loadImage('assets/goldfish-100pxReversed.png');
+    } else if ((Fish[i].xSpeedMultiplier === 1) && (Fish[i].isDead === false)) {
+      Fish[i].xPosition += fishSpeed;
+      Fish[i].image = loadImage('assets/goldfish-100px.png');
+    }
 
+    //if fish hits the top or bottom it reverses direction, if it's not dead:
+    if ((Fish[i].yPosition > (640 - fishHeight) || Fish[i].yPosition < 0) && Fish[i].isDead === false) {
+      Fish[i].ySpeedMultiplier *= -1;
+    }
 
-  //if a fish hits a wall, reverse its speed:
-  for (var i = 0; i < allFish.length; i++) {
-    ////////////left and right edges:
-    if (allFish[i].xPosition > (800 - fishLength) || allFish[i].xPosition < 0) {
-      allFish[i].xSpeedMultiplier *= -1;
+    //move the fish up/down, if it's not dead:
+    if ((Fish[i].ySpeedMultiplier === -1) && (Fish[i].isDead === false)) {
+      Fish[i].yPosition -= fishSpeed;
+    } else if ((Fish[i].ySpeedMultiplier === 1) && (Fish[i].isDead === false)) {
+      Fish[i].yPosition += fishSpeed;
     }
-    if (allFish[i].xSpeedMultiplier === -1) {
-      allFish[i].xPosition -= fishSpeed;
-      allFish[i].image = loadImage('assets/goldfish-100pxReversed.png');
-    } else {
-      allFish[i].xPosition += fishSpeed;
-      allFish[i].image = loadImage('assets/goldfish-100px.png');
-    }
-    //////////////top and bottom edges:
-    if (allFish[i].yPosition > (640 - fishHeight) || allFish[i].yPosition < 0) {
-      allFish[i].ySpeedMultiplier *= -1;
-    }
-    if (allFish[i].ySpeedMultiplier === -1) {
-      allFish[i].yPosition -= fishSpeed;
-    } else {
-      allFish[i].yPosition += fishSpeed;
+    //move the fish up if it is dead:
+    if (Fish[i].isDead === true && Fish[i].yPosition > 0) {
+      Fish[i].yPosition--;
+      //Fish[i].xSpeedMultiplier === 1 ? fishgoingright : fishgoingleft;
     }
   }
 }
 
 
+
+
 function mouseClicked() {
   console.log(mouseX, mouseY);
   //check if a fish was clicked on:
-  for (var i = 0; i < allFish.length; i++) {
+  for (var i = 0; i < Fish.length; i++) {
     if (
-      mouseX > allFish[i].xPosition &&
-      mouseX < (allFish[i].xPosition + fishLength) &&
-      mouseY > allFish[i].yPosition &&
-      mouseY < (allFish[i].yPosition + fishHeight)) 
+      mouseX > Fish[i].xPosition &&
+      mouseX < (Fish[i].xPosition + fishLength) &&
+      mouseY > Fish[i].yPosition &&
+      mouseY < (Fish[i].yPosition + fishHeight)) 
       {
-        //the clicked on fish is allFish[i]:
-        console.log(`you clicked on fish ${allFish[i].image}`);
+        //the clicked on fish is Fish[i]:
+        console.log(`you clicked on fish ${Fish[i].image}`);
       }
   }
 }
