@@ -1,0 +1,27 @@
+* {
+    outline: 1px solid goldenrod;
+}
+canvas {
+    width: 960px;
+    height: 450px;
+    margin: 10px auto auto auto;
+    /* box-shadow: 10px 10px grey, 10px 10px grey; */
+    /* border: 100px solid goldenrod; */
+    background-image: url(http://www.maharajatravels.in/wp-content/uploads/2015/02/underwater-bg.jpg);
+    background-size: 990px 500px;
+    font-size: 170%;
+    text-align: center;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+    border: 10px inset #69EBD0; 
+    border-radius: 5px;
+    padding: 1%
+}
+#mainGameArea {
+    margin: auto;
+    width: 320px;
+}
