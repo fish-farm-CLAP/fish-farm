@@ -22,6 +22,7 @@ var Fish = function(image) {
   this.age = 0;
   this.saturation = randomNum(maxSaturation, minSaturation);
   this.hungry = false;
+  this.isDead = false;
 
   Fish.all.push(this);
 };
@@ -57,7 +58,8 @@ Fish.prototype.feedFish = function () {
 
 function killFish (index) {
 
-  Fish.all.splice(index, 1);
+  //Fish.all.splice(index, 1);
+  Fish.all[index].isDead = true;
 
 }
 
