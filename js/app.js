@@ -34,7 +34,7 @@ function tick () {
 
   if (newEvent >= 30) {
 
-    //Get new event
+    // choiceGeni();
 
     newEvent = 0;
 
