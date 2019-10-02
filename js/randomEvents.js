@@ -92,7 +92,7 @@ var fishShow = function(){
 };
 
 var kidsWillBe = function(){
-  eventText.textContent = 'you held a family friendly party but some of the kids wern\'t so friendly with your fish.  you lost two fish to their gruby little mits ';
+  eventText.textContent = 'you held a family friendly party but some of the kids wern\'t so friendly with your fish.  you lost two fish to their gruby little mits';
   if (Fish.all.length <= 3){
     for (var i = 0 ; i < Fish.all.length; i++){
       Fish.all.splice(0,1) ;
