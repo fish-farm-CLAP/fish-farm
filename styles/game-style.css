@@ -1,0 +1,68 @@
+* {
+    outline: 1px solid goldenrod;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+    width: 980px;
+    margin: 2% auto auto auto;
+    background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
+}
+header {
+    border: 10px outset #4652a6;
+    font-family: 'Notable', sans-serif;
+    font-size: 350%;
+    width: 400px;
+    height: 70px;
+    margin: auto;
+    text-align: center;
+    background: #216869;
+    text-shadow: 1px 1px white;
+    padding: auto;
+}
+h1 {
+    width: 230px;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+}
+td {
+    padding-left: 5px; 
+}
+#buttonsAndStats {
+    display: inline;
+} 
+button {
+    background: #216869;
+    width: 200px;
+    height: 35px;
+    font-size: 105%;
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+h2 {
+    width: 5%;
+    font-size: 150%;
+}
+canvas {
+    background: #69EBD0;
+    background-size: 990px 500px;
+    border: 10px ridge silver; 
+    border-radius: 5px;
+    z-index: 1;
+}
+#mainGameArea {
+    /* margin: auto; */
+    width: 320px;
+}
+article {
+    background-color: black;
+}
+h6 {
+    font-family: 'Press Start 2P', cursive;
+    margin: auto;
+    color: red;
+    font-size: 150%;
+    background: black;
+    border: 5px ridge goldenrod;
+}

@@ -1,93 +1,121 @@
-'use strict';
 
+console.log('starteventjs');
 // global variables
-var food = 0;
-var money = 0
-var eventRun = document.getElementById ('ramdomEventDiv');
-var eventText = document.createElement ('p');
+// var gameVariables = {
+//   money: 10,
+//   food: 10,
+//   score: 0,
+// };
+var eventRun = document.getElementById('randomEventDiv');
+var eventText = document.createElement('p');
+eventText.textContent = 'random event';
 eventRun.appendChild(eventText);
 
 
-// aray of randome funtion events 
-var eventOption = []
+// aray of randome funtion events
+var eventOption = [tooMuchFood, winFish, suficate, lameDay,fishShow,yourFishCanTalk, inheritFish, noFood, zombie, kidsWillBe , speedFish, popExpode];
+
+
 // array witll be chosen at ramdom
-console.log('hooked in')
+console.log('hooked in');
 //random source generator from array eventOption in constructor
 function choiceGeni(){
-  var eventSelect = Math.floor(Math.random() * eventOption.length );
-  // console.log('eventSelectt', eventSelect);
-  return eventSelect;
+  var optionSelect = randomNum(eventOption.length);
+  console.log(optionSelect);
+  return eventOption[optionSelect];
 }
-console.log(choiceGeni())
 
 
-// funtion will have a name 
-function tooMuchFood(){
-if ( gameVariables.food <= 3){
-  gameVariables.food-=2;
- } eventText.textContent = 'the lid fell off your feeder and you have overfed you fish and lost food' 
+
+// funtion will have a name
+var tooMuchFood = function() {
+  eventText.textContent = 'the lid fell off your feeder and you have overfed you fish and lost food';
+  if ( gameVariables.food <= 5 ){
+    gameVariables.food -= 4 ;
+  }
 }
-eventOption.push(tooMuchFood()); 
 
 
-
-function winFish(){
-if (Fish.all.length <= 1){
-  newFish();
-  }eventText.textContent = 'you had a lucky throw at a ring toss game and won a new goldfish';
+var winFish = function(){
+  eventText.textContent = 'you had a lucky throw at a ring toss game and won a new goldfish';
+    newFish();
 }
-eventOption.push(winFish());
 
-function suficate(){
-  var deadFish = Fish.all[Math.floor(Math.random()*Fish.all.length)];
-  deadFish = killAFish();  // randomgrab of array object
+var suficate = function(){
   eventText.textContent = 'Your tank had an algie bloom and you lost a fish';
+  if (Fish.all.length >= 3){
+    Fish.all.splice(0,Fish.all.length/2) ; // randomgrab of array object
+    
   }
-eventOption.push(suficate());
-
-function noFood(){
- for (var i=0; i <fish.all[i].saturation; i++0){
-   if (fish.all.saturation -= 50%); //if its amost hungery it dies.
-   fish.all.saturation === 0
- }
- eventText.textContent = 'You forgot to keep an eye on your fishfood and you ran out. All your fish go hungry today';
 }
-eventOption.push(noFood());
+
+var noFood = function(){
+  eventText.textContent = 'You forgot to keep an eye on your fishfood and you ran out. All your fish go hungry today';
+  for (var i = 0; i < Fish.all.length; i++){
+    if (Fish.all[i].saturation >= minSaturation/2 ){ //if
+      Fish.all[i].saturation = minSaturation/2;
+    }
+  }
+}
 
 
-function zombie(){
+var zombie = function(){
+  eventText.textContent = 'one of your fish tuned zombie and ate eat the brain of another. your down two fish';
   if (Fish.all.length <= 3){
-   for (var i=0 ; i < Fish.all.length; i++);
-Fish.all.splice(0,2) ;
-}else {
-  game over
-}
-eventText.textContent ='one of your fish tuned zombie and ate eat the brain of another. your down two fish';
-}
-
-eventOption.push(zombie());
-
-function popExpode(){
-  new Fish();
-  new Fish();
-  new Fish();
-  new Fish();
-  new fish();
-  eventText.textContent = 'one of your fish laid eggs and now you have 5 baby fish';
+    for (var i = 0 ; i < Fish.all.length; i++){
+      Fish.all.splice(0,2) ;
+    }
   }
-eventOption.push(popExpode());
-
-
-function lameDay(){
-eventText.textContent = 'Today was a slow day your fish are happy and healthy';
 }
-eventOption.push(lameDay());
-// each array will have Text what is happening "text "
-// what the affect is "incriment counter, exicute other funtions 
-
-// funtion to select random Array
-
-// assigne randome array as text
 
 
+var popExpode = function(){
+  eventText.textContent = 'one of your fish laid eggs and now you have 5 baby fish';
+  new Fish();
+  new Fish();
+  new Fish();
+  new Fish();
+  new Fish();
+}
 
+
+var lameDay = function(){
+  eventText.textContent = 'Today was a slow day your fish are happy and healthy';
+}
+
+var yourFishCanTalk = function(){
+  eventText.textContent = 'your fish started talking and you gained $5 touring the talk cercit';
+  if (gameVariables.money <= 1){
+    gameVariables.money += 5;
+  }
+}
+
+var fishShow = function(){
+  eventText.textContent = 'your fish took second prize at the fish show, your prze is another unit of fishfood.';
+  if (gameVariables.food < 0){
+    gameVariables.food++;
+  }
+}
+
+var kidsWillBe = function(){
+  eventText.textContent = 'you held a family friendly party but some of the kids wern\'t so friendly with your fish.  you lost two fish to their gruby little mits ';
+  if (Fish.all.length <= 3){
+    for (var i = 0 ; i < Fish.all.length; i++){
+      Fish.all.splice(0,1) ;
+    }
+  }
+}
+
+var inheritFish = function(){
+  eventText.textContent = 'your friend is moving and knows that you will care for their fish and offers them to you';
+  new Fish();
+  new Fish();
+  new Fish();
+}
+
+var speedFish = function(){
+  eventText.textContent = 'your fish are affected by the new fishfood you are using and now have twice the activity levle';
+  if (fishSpeed === 3){
+    fishSpeed += 3;
+  }
+}

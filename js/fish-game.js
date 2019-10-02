@@ -1,6 +1,6 @@
-var canvasWidth = 800;
-var canvasHeight = 640;
-var fishSpeed = 2;
+var canvasWidth = 960;
+var canvasHeight = 450;
+var fishSpeed = 3;
 var fishLength = 100;
 var fishHeight = 50;
 
@@ -8,67 +8,72 @@ var fishHeight = 50;
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
-  backgroundImg = loadImage('https://www.leisurepro.com/blog/wp-content/uploads/2019/03/shutterstock_1174604908-1366x800@2x.jpg');
+
+  backgroundImg = loadImage('assets/underwater.jpg');
   goldfishPic = loadImage('assets/goldfish-100px.png');
-
-  //fish objects made for testing
-  fish1 = {
-    image: goldfishPic,
-    xPosition: 0,
-    yPosition: 0,
-    xSpeedMultiplier: -1,
-    ySpeedMultiplier: -1,
-  };
-  fish2 = {
-    image: goldfishPic,
-    xPosition: 500,
-    yPosition: 200,
-    xSpeedMultiplier: 1,
-    ySpeedMultiplier: -1,
-  };
-  fish3 = {
-    image: goldfishPic,
-    xPosition: 200,
-    yPosition: 500,
-    xSpeedMultiplier: -1,
-    ySpeedMultiplier: 1,
-  };
-
-  //TODO: replace allFish with the array used in fish.js
-  allFish = [fish1, fish2, fish3];
-
-
+  goldfishPicReversed = loadImage('assets/goldfish-100pxReversed.png');
+  goldfishPicDead = loadImage('assets/goldfish-100px-dead.png');
+  goldfishPicDeadReversed = loadImage('assets/goldfish-100px-dead-reversed.png');
+  goldfishPicHungry = loadImage('assets/goldfish-100px-hungry.png');
+  goldfishPicReversedHungry = loadImage('assets/goldfish-100pxReversed-hungry.png');
 }
 
 function draw() {
   image(backgroundImg, 0, 0);
 
-  //draw each fish:
-  for (var i = 0; i < allFish.length; i++) {
-    image(allFish[i].image, allFish[i].xPosition, allFish[i].yPosition);
+
+  //draw each fish every frame at their x and y positions:
+  for (var i = 0; i < Fish.all.length; i++) {
+    if (Fish.all[i].image === null) { Fish.all[i].image = goldfishPic; }
+    image(Fish.all[i].image, Fish.all[i].xPosition, Fish.all[i].yPosition);
   }
 
+  //////////////fish movement:
+  for (var i = 0; i < Fish.all.length; i++) {
+    //if fish hits the left or right edge of the screen reverse its direction:
+    if (Fish.all[i].xPosition > (960 - fishLength) || Fish.all[i].xPosition < 0 && (Fish.all[i].isDead === false)) {
+      Fish.all[i].xSpeedMultiplier *= -1;
+    }
 
+    //move fish left or right only if it's not dead
+    if ((Fish.all[i].xSpeedMultiplier === -1) && (Fish.all[i].isDead === false)) {
+      //draw the fish:
+      if (Fish.all[i].hungry === true) {
+        Fish.all[i].image = goldfishPicReversedHungry;
+      } else {
+        Fish.all[i].image = goldfishPicReversed;
+      }
+      Fish.all[i].xPosition -= fishSpeed;
+    } else if ((Fish.all[i].xSpeedMultiplier === 1) && (Fish.all[i].isDead === false)) {
+      //draw the fish:
+      if (Fish.all[i].hungry === true) {
+        Fish.all[i].image = goldfishPicHungry;
+      } else {
+        Fish.all[i].image = goldfishPic;
+      }
+      Fish.all[i].xPosition += fishSpeed;
+    }
 
-  //if a fish hits a wall, reverse its speed:
-  for (var i = 0; i < allFish.length; i++) {
-    ////////////left and right edges:
-    if (allFish[i].xPosition > (800 - fishLength) || allFish[i].xPosition < 0) {
-      allFish[i].xSpeedMultiplier *= -1;
+    //if fish hits the top or bottom it reverses direction, if it's not dead:
+    if ((Fish.all[i].yPosition > (450 - fishHeight) || Fish.all[i].yPosition < 0) && Fish.all[i].isDead === false) {
+      Fish.all[i].ySpeedMultiplier *= -1;
     }
-    if (allFish[i].xSpeedMultiplier === -1) {
-      allFish[i].xPosition -= fishSpeed;
-    } else {
-      allFish[i].xPosition += fishSpeed;
+
+    //move the fish up/down, if it's not dead:
+    if ((Fish.all[i].ySpeedMultiplier === -1) && (Fish.all[i].isDead === false)) {
+      Fish.all[i].yPosition -= fishSpeed;
+    } else if ((Fish.all[i].ySpeedMultiplier === 1) && (Fish.all[i].isDead === false)) {
+      Fish.all[i].yPosition += fishSpeed;
     }
-    //////////////top and bottom edges:
-    if (allFish[i].yPosition > (640 - fishHeight) || allFish[i].yPosition < 0) {
-      allFish[i].ySpeedMultiplier *= -1;
-    }
-    if (allFish[i].ySpeedMultiplier === -1) {
-      allFish[i].yPosition -= fishSpeed;
-    } else {
-      allFish[i].yPosition += fishSpeed;
+    //move the fish up if it is dead:
+    if (Fish.all[i].isDead === true && Fish.all[i].yPosition > 0) {
+      Fish.all[i].yPosition--;
+      //dead fish are upside down:
+      if (Fish.all[i].xSpeedMultiplier === 1) {
+        Fish.all[i].image = goldfishPicDead;
+      } else {
+        Fish.all[i].image = goldfishPicDeadReversed;
+      }
     }
   }
 }
@@ -77,24 +82,19 @@ function draw() {
 function mouseClicked() {
   console.log(mouseX, mouseY);
   //check if a fish was clicked on:
-  for (var i = 0; i < allFish.length; i++) {
+
+  for (var i = 0; i < Fish.all.length; i++) {
     if (
-      mouseX > allFish[i].xPosition &&
-      mouseX < (allFish[i].xPosition + fishLength) &&
-      mouseY > allFish[i].yPosition &&
-      mouseY < (allFish[i].yPosition + fishHeight)) 
-      {
-        console.log('you clicked on a fish');
-      }
-
-
+      mouseX > Fish.all[i].xPosition &&
+      mouseX < (Fish.all[i].xPosition + fishLength) &&
+      mouseY > Fish.all[i].yPosition &&
+      mouseY < (Fish.all[i].yPosition + fishHeight)) {
+      //Fish.all[i] has been clicked on, execute the code below:
+      Fish.all[i].feedFish();
+      console.log('fed a fish');
+    }
   }
+  
+  //update food/score/money counters
+  displayVar();
 }
-
-
-//TODO:
-//fix background image size/placement
-//fix fish size
-//make fish bounce off the edges of the screen
-//make addition/removal of fish work with constructor function
-//    add a function inside draw that draws/tracks a fish for each fish in allFish array?
