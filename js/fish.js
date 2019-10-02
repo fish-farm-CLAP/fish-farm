@@ -9,7 +9,7 @@ var maxSaturation = 600;
 var minSaturation = 400;
 
 //Constructor Function
-var Fish = function() {
+var Fish = function () {
   //used in rendering
   this.image = null;
 
@@ -34,7 +34,7 @@ Fish.all = [];
 
 //Increase the Age by 10 time fed
 Fish.prototype.timesFed = function () {
-  this.fed ++;
+  this.fed++;
   if (this.fed % 3 === 0) {
     gameVariables.money += 10;
   }
@@ -94,7 +94,7 @@ function fishSpeedUpdater() {
 }
 
 
-function killFish (index) {
+function killFish(index) {
 
   //Fish.all.splice(index, 1);
   Fish.all[index].isDead = true;
@@ -124,7 +124,7 @@ function loadFish() {
 
 }
 
-function hunger () {
+function hunger() {
 
   for (var i = 0; i < Fish.all.length; i++) {
 
@@ -134,8 +134,9 @@ function hunger () {
       killFish(i);
     } else if (Fish.all[i].saturation <= minSaturation / 2) {
       Fish.all[i].hungry = true;
+    } else  {
+      Fish.all[i].hungry = false;
     }
-
   }
 
 }
