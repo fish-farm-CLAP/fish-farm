@@ -10,13 +10,17 @@
 var scoreDisplay = document.getElementById('scoreArea');
 var moneyDisplay = document.getElementById('currentMoney');
 var foodDisplay = document.getElementById('currentFood');
+var buyFishButton = document.getElementById('buyFish');
+var buyFoodButton = document.getElementById('buyFood');
+var gameHasEnded = false;
+
 
 //Counter for how many 'ticks' have gone by between events
 var newEvent = 0;
 
 //The main game variables. Will be stored localy as the game progresses.
 var gameVariables = {
-  money: 10,
+  money: 200,
   food: 10,
   score: 0,
 };
@@ -25,7 +29,7 @@ var gameVariables = {
 const storageKey = 'playerScores';
 
 //If there is info load that else create a new game
-function setUp () {
+function setUp() {
   //see if there is a previous save if so load that
   loadGame();
 
@@ -35,30 +39,28 @@ function setUp () {
 }
 
 //Controls the game loop
-function tick () {
+function tick() {
+  
+  if (!gameHasEnded) {
+    displayVar();
+    checkIfAllFishAreDead();
 
-  //Make your fish hungey
-  hunger();
-
-  //Sees if it is time to sttart a new event.
-  if (newEvent >= 30) {
-
-    choiceGeni();
-
-    newEvent = 0;
-
-  }else {
-
-    newEvent++;
+    //Make your fish hungry
+    hunger();
+    //Sees if it is time to sttart a new event.
+    if (newEvent >= 30) {
+      //choiceGeni();
+      newEvent = 0;
+    } else {
+      newEvent++;
+    }
 
   }
-
-  // displayVar();
 
 }
 
 //Load any saved data from the system
-function loadGame () {
+function loadGame() {
 
   var savedData = localStorage.getItem(storageKey);
 
@@ -88,7 +90,7 @@ function loadGame () {
 }
 
 //Save current game to the file system
-function saveGame () {
+function saveGame() {
 
   var dataSaved = JSON.stringify(gameVariables);
   localStorage.setItem(storageKey, dataSaved);
@@ -98,7 +100,7 @@ function saveGame () {
 }
 
 //Create a new fish either at game start or when the user buys one
-function newFish () {
+function newFish() {
   //Get a new fish image
   //var randomIndex = randomNum(images.length);
   //need more fish images
@@ -109,7 +111,9 @@ function newFish () {
 }
 
 //Function to handle the different button events
-function buyFood () {
+function buyFood() {
+
+  displayVar();
 
   if (gameVariables.money >= 30) {
 
@@ -125,7 +129,9 @@ function buyFood () {
 }
 
 
-function buyFish () {
+function buyFish() {
+
+  displayVar();
 
   if (gameVariables.money >= 100) {
 
@@ -155,6 +161,48 @@ function displayVar() {
   foodDisplay.textContent = `Food Reserves: ${gameVariables.food}`;
 
 }
+
+function checkIfAllFishAreDead() {
+  var numberOfDeadFish = 0;
+  //get the amount of dead fish
+  for (var i = 0; i < Fish.all.length; i++) {
+    if (Fish.all[i].isDead === true) {
+      numberOfDeadFish++;
+    }
+  }
+  //compare the amount to the total number of fish
+  if (numberOfDeadFish === Fish.all.length) {
+    gameOver();
+  }
+}
+
+function gameOver() {
+  gameHasEnded = true;
+  console.log('game over!');
+  var gameArea = document.getElementById('mainGameArea');
+  var messageDisplayBox = document.createElement('form');
+  gameArea.appendChild(messageDisplayBox);
+  var youLose = document.createElement('h6');
+  youLose.textContent = 'You have o-fish-ally LOST the game!';
+  messageDisplayBox.appendChild(youLose);
+  //need to add a "start new game" button
+  var newGameButton = document.createElement('input');
+  messageDisplayBox.appendChild(newGameButton);
+  newGameButton.textContent = 'New Game';
+  newGameButton.setAttribute('type', 'submit');
+  newGameButton.addEventListener('submit', newGame);
+}
+
+buyFishButton.addEventListener('click', buyFish);
+buyFoodButton.addEventListener('click', buyFood);
+
+
+function newGame() {
+  console.log('newGame button clicked');
+  //set all game vars to their defaults, remove the html made by gameOver, etc
+  document.location.reload()
+}
+
 
 //One page load either load save data or create a new game
 setUp();
