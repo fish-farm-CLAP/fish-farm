@@ -94,7 +94,7 @@ function hunger () {
 
   for (var i = 0; i < Fish.all.length; i++) {
 
-    Fish.all[i].saturation -= randomNum(20);
+    Fish.all[i].saturation -= randomNum(5);
 
     if (Fish.all[i].saturation <= 0) {
       killFish(i);

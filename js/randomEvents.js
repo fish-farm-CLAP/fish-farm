@@ -118,6 +118,7 @@ var speedFish = function(){
     fishSpeed += 3;
   }
 };
+
 var heatWave = function(){
   eventText.textContent = 'you are in the middle of an unpresidented heat wave. you have lost 2 fish and need to buy more to replace them';
   if (Fish.all.saturation >= minSaturation / 2 ){
@@ -129,8 +130,9 @@ var heatWave = function(){
 
 var slowDay = function(){
   eventText.textContent = 'even your fish think today was slow.  They have started swiming slower.';
-  if (fishSpeed === 3);
-  fishSpeed -= 1;
+  if (fishSpeed === 3){
+    fishSpeed -= 1;
+  }
 };
 
 var payDay = function(){
@@ -142,20 +144,20 @@ var boughtFish = function(){
   eventText.textContent = 'you couldn\'t resist that fishie in the window, so you bought it';
   gameVariables.money -= 50;
   newFish();
-
 };
+
 var superFood = function(){
   eventText.textContent = ' you bought some super food and your fish love it';
   gameVariables.food ++;
   gameVariables.money -= 10;
   console.log(Fish.all.saturation);
   for (var i = 0; i < Fish.all.length; i++){
-    if (Fish.all[i].saturation <= minSaturation / 1 ){ //if
+    if (Fish.all[i].saturation <= minSaturation / 1 ){
       Fish.all[i].saturation = minSaturation / 1;
     }
   }console.log(Fish.all.saturation);
 };
 
-var  = function(){
-};
+// var  = function(){
+// };
 var eventOption = [tooMuchFood,heatWave, superFood, payDay, boughtFish , winFish, suficate, lameDay,fishShow,yourFishCanTalk, inheritFish, noFood, zombie, kidsWillBe , speedFish, popExpode];
