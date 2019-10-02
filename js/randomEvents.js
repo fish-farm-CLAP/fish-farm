@@ -44,7 +44,6 @@ var suficate = function(){
   eventText.textContent = 'Your tank had an algie bloom and you lost a fish';
   if (Fish.all.length >= 3){
     Fish.all.splice(0,Fish.all.length / 2) ; // randomgrab of array object
-
   }
 };
 
@@ -84,16 +83,12 @@ var lameDay = function(){
 
 var yourFishCanTalk = function(){
   eventText.textContent = 'your fish started talking and you gained $5 touring the talk cercit';
-  if (gameVariables.money <= 1){
-    gameVariables.money += 5;
-  }
+  gameVariables.money += 50;
 };
 
 var fishShow = function(){
   eventText.textContent = 'your fish took second prize at the fish show, your prze is another unit of fishfood.';
-  if (gameVariables.food < 0){
-    gameVariables.food++;
-  }
+  gameVariables.food+= 5;
 };
 
 var kidsWillBe = function(){
@@ -114,26 +109,28 @@ var inheritFish = function(){
 
 var speedFish = function(){
   eventText.textContent = 'your fish are affected by the new fishfood you are using and now have twice the activity levle';
-  if (fishSpeed === 3){
-    fishSpeed += 3;
+  for(var i = 0; i < Fish.all[i].length; i++){
+    Fish.all.xSpeed += 10;
+    Fish.all.ySpeed += 10;
   }
 };
 
 var heatWave = function(){
   eventText.textContent = 'you are in the middle of an unpresidented heat wave. you have lost 2 fish and need to buy more to replace them';
-
   if (Fish.all.saturation >= minSaturation / 2 ){
     Fish.all.saturation = minSaturation / 2;
     buyFish();
     buyFish();
+    console.log(heatWave());
   }
 };
 
 
 var slowDay = function(){
   eventText.textContent = 'even your fish think today was slow.  They have started swiming slower.';
-  if (fishSpeed === 3){
-    fishSpeed -= 1;
+  for(var i = 0; i < Fish.all[i].length; i++){
+    Fish.all.xSpeed -= 3;
+    Fish.all.ySpeed -= 3;
   }
 };
 
@@ -144,20 +141,18 @@ var payDay = function(){
 
 var boughtFish = function(){
   eventText.textContent = 'you couldn\'t resist that fishie in the window, so you bought it';
-  gameVariables.money -= 50;
-  newFish();
+  // gameVariables.money -= 50;
+  // newFish();
+  buyFish();
 };
 
 var superFood = function(){
   eventText.textContent = ' you bought some super food and your fish love it';
   gameVariables.food ++;
   gameVariables.money -= 10;
-  console.log(Fish.all.saturation);
   for (var i = 0; i < Fish.all.length; i++){
-    if (Fish.all[i].saturation <= minSaturation / 1 ){
-      Fish.all[i].saturation = minSaturation / 1;
-    }
-  }console.log(Fish.all.saturation);
+    Fish.all[i].saturation = randomNum(maxSaturation,minSaturation);
+  }
 };
 
 // var  = function(){
