@@ -70,13 +70,23 @@ h2 {
     width: 5%;
     font-size: 150%;
 }
-#scoreArea {
+#scores {
+    height: 80px;
+}
+#scoreArea, #highScore {
     text-align: center;
     font-size: 2.5em;
+    display: inline;
     width: 260px;
-    margin: 0 auto;
     background-color: rgba(156, 184, 184, 0.589);
     font-family: 'Press Start 2P', cursive;
+}
+#scoreArea {
+    float: right;
+}
+#highScore {
+    float: left;
+    width: 500px;
 }
 #resources {
     margin-top: 10px;
