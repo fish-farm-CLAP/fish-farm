@@ -13,7 +13,6 @@ eventRun.appendChild(eventText);
 
 
 // aray of randome funtion events
-var eventOption = [tooMuchFood, winFish, suficate, lameDay,fishShow,yourFishCanTalk, inheritFish, noFood, zombie, kidsWillBe , speedFish, popExpode];
 
 
 // array witll be chosen at ramdom
@@ -22,7 +21,7 @@ console.log('hooked in');
 function choiceGeni(){
   var optionSelect = randomNum(eventOption.length);
   console.log(optionSelect);
-  return eventOption[optionSelect];
+  return eventOption[optionSelect]();
 }
 
 
@@ -30,7 +29,7 @@ function choiceGeni(){
 // funtion will have a name
 var tooMuchFood = function() {
   eventText.textContent = 'the lid fell off your feeder and you have overfed you fish and lost food';
-  if ( gameVariables.food <= 5 ){
+  if ( gameVariables.food >= 5 ){
     gameVariables.food -= 4 ;
   }
 }
@@ -38,7 +37,7 @@ var tooMuchFood = function() {
 
 var winFish = function(){
   eventText.textContent = 'you had a lucky throw at a ring toss game and won a new goldfish';
-    new Fish();
+  newFish();
 }
 
 var suficate = function(){
@@ -119,3 +118,18 @@ var speedFish = function(){
     fishSpeed += 3;
   }
 }
+var heatWave = function(){
+  eventText.textContent = 'you are in the middle of an unpresidented heat wave. you have lost 2 fish and need to buy more to replace them';
+  if (Fish.all[i].saturation >= minSaturation/4 ){ 
+    Fish.all[i].saturation = minSaturation/4;
+  buyFish();
+  buyFish();
+}
+
+var slowDay = function(){
+  eventText.textContent = 'even your fish think today was slow.  They have started swiming slower.'
+  if (fishSpeed ===3);
+  fishSpeed-=2;
+}
+
+var eventOption = [tooMuchFood,heatWave, winFish, suficate, lameDay,fishShow,yourFishCanTalk, inheritFish, noFood, zombie, kidsWillBe , speedFish, popExpode];
