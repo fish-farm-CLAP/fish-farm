@@ -77,18 +77,29 @@ canvas {
     border-radius: 5px;
     z-index: 1;
 }
-#mainGameArea {
-    /* margin: auto; */
-    width: 320px;
+#gameOver > form{
+  /* margin: auto; */
+  position: fixed;
+  width: 970px;
+  height: 400px;
+
+  top:320px;
+  
+  border: 5px ridge goldenrod;
+  background: black;
+
 }
-article {
-    background-color: black;
+#gameOver > form > input {
+  margin: 100px 0 0 380px;
+  height: 50px;
+  width: 200px;
 }
+
 h6 {
+  padding-top: 100px;
+  text-align: center;
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     color: red;
-    font-size: 150%;
-    background: black;
-    border: 5px ridge goldenrod;
+    font-size: 290%;
 }

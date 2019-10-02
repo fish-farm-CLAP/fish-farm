@@ -49,7 +49,7 @@ function tick() {
     hunger();
     //Sees if it is time to sttart a new event.
     if (newEvent >= 120) {
-      //choiceGeni();
+      choiceGeni();
       newEvent = 0;
     } else {
       newEvent++;
@@ -181,7 +181,7 @@ function checkIfAllFishAreDead() {
 function gameOver() {
   gameHasEnded = true;
   console.log('game over!');
-  var gameArea = document.getElementById('mainGameArea');
+  var gameArea = document.getElementById('gameOver');
   var messageDisplayBox = document.createElement('form');
   gameArea.appendChild(messageDisplayBox);
   var youLose = document.createElement('h6');
@@ -193,7 +193,7 @@ function gameOver() {
   //need to add a "start new game" button
   var newGameButton = document.createElement('input');
   messageDisplayBox.appendChild(newGameButton);
-  newGameButton.textContent = 'New Game';
+  newGameButton.setAttribute('value', 'New Game');
   newGameButton.setAttribute('type', 'submit');
   newGameButton.addEventListener('submit', newGame);
 }
