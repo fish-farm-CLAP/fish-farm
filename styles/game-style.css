@@ -13,26 +13,27 @@ body div:nth-child(1){
     height: 50px;
     width: 980px;
 }
-body div:nth-child(1) li {
-    display: inline-block;
-    margin: 10px,
-    height: 20px;
-    margin: 20px,5px,5px,20px;
+ul>li {
+    float: left;
+    width: 50%;
 }
-body dvi:nth-child(1) ul:nth-child(1){
-    position: relative;
-    top: 10px;
-    left: 10px
-    margin: 5px,50px,5px,0;
- }
-
- body dvi:nth-child(1) ul:nth-child(2){
-     position: relative;
-     top: 10px;
-     left: 400px
-     margin: 5px, 0px, 5px, 50px;
- }
-
+a {
+    text-decoration: none;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+     font-size: 2em;
+}
+ul:nth-child(1){
+    text-align: start;
+}
+ 
+ul>li:nth-of-type(2){
+    text-align: right;
+}
 header {
     border: 10px outset #4652a6;
     font-family: 'Notable', sans-serif;
