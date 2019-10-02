@@ -1,4 +1,4 @@
-
+console.log('loaded random events script');
 console.log('starteventjs');
 // global variables
 // var gameVariables = {
@@ -120,12 +120,14 @@ var speedFish = function(){
 
 var heatWave = function(){
   eventText.textContent = 'you are in the middle of an unpresidented heat wave. you have lost 2 fish and need to buy more to replace them';
+
   if (Fish.all.saturation >= minSaturation / 2 ){
     Fish.all.saturation = minSaturation / 2;
     buyFish();
     buyFish();
   }
 };
+
 
 var slowDay = function(){
   eventText.textContent = 'even your fish think today was slow.  They have started swiming slower.';
