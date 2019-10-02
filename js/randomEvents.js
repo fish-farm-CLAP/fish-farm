@@ -42,9 +42,9 @@ var winFish = function(){
 
 var suficate = function(){
   eventText.textContent = 'Your tank had an algie bloom and you lost a fish';
-  if (Fish.all.length >= 3){
-    Fish.all.splice(0,Fish.all.length / 2) ; // randomgrab of array object
-  }
+  var kills = (Fish.all.length - dead ) / 2;
+  killxFish(kills);
+
 };
 
 var noFood = function(){
@@ -60,14 +60,12 @@ var noFood = function(){
 var zombie = function(){
   eventText.textContent = 'one of your fish tuned zombie and ate eat the brain of another. your down two fish';
   if (Fish.all.length <= 3){
-    for (var i = 0 ; i < Fish.all.length; i++){
-      Fish.all.splice(0,2) ;
-    }
+    killxFish(2);
   }
 };
 
 
-var popExpode = function(){
+var popExplode = function(){
   eventText.textContent = 'one of your fish laid eggs and now you have 5 baby fish';
   new Fish();
   new Fish();
@@ -81,23 +79,21 @@ var lameDay = function(){
   eventText.textContent = 'Today was a slow day your fish are happy and healthy';
 };
 
-var yourFishCanTalk = function(){
+var fishCanTalk = function(){
   eventText.textContent = 'your fish started talking and you gained $5 touring the talk cercit';
   gameVariables.money += 50;
 };
 
 var fishShow = function(){
   eventText.textContent = 'your fish took second prize at the fish show, your prze is another unit of fishfood.';
-  gameVariables.food+= 5;
+  gameVariables.food += 5;
 };
 
 var kidsWillBe = function(){
   eventText.textContent = 'you held a family friendly party but some of the kids wern\'t so friendly with your fish.  you lost two fish to their gruby little mits ';
   if (Fish.all.length <= 3){
-    for (var i = 0 ; i < Fish.all.length; i++){
-      Fish.all.splice(0,1) ;
-    }
-  }
+         killxFish(2) ;
+      }
 };
 
 var inheritFish = function(){
@@ -109,28 +105,25 @@ var inheritFish = function(){
 
 var speedFish = function(){
   eventText.textContent = 'your fish are affected by the new fishfood you are using and now have twice the activity levle';
-  for(var i = 0; i < Fish.all[i].length; i++){
-    Fish.all.xSpeed += 10;
-    Fish.all.ySpeed += 10;
+  for(var i = 0; i < Fish.all.length; i++){
+    Fish.all[i].xSpeed = 10 + dead;
+    Fish.all[i].ySpeed = 10 + dead;
   }
 };
 
 var heatWave = function(){
   eventText.textContent = 'you are in the middle of an unpresidented heat wave. you have lost 2 fish and need to buy more to replace them';
-  if (Fish.all.saturation >= minSaturation / 2 ){
-    Fish.all.saturation = minSaturation / 2;
-    buyFish();
-    buyFish();
-    console.log(heatWave());
-  }
+  killxFish(2);
+  buyFish();
+  buyFish();
 };
 
 
 var slowDay = function(){
   eventText.textContent = 'even your fish think today was slow.  They have started swiming slower.';
-  for(var i = 0; i < Fish.all[i].length; i++){
-    Fish.all.xSpeed -= 3;
-    Fish.all.ySpeed -= 3;
+  for(var i = 0; i < Fish.all.length; i++){
+    Fish.all[i].xSpeed = 1;
+    Fish.all[i].ySpeed = 1;
   }
 };
 
@@ -141,20 +134,35 @@ var payDay = function(){
 
 var boughtFish = function(){
   eventText.textContent = 'you couldn\'t resist that fishie in the window, so you bought it';
-  // gameVariables.money -= 50;
-  // newFish();
-  buyFish();
+   buyFish();
 };
 
 var superFood = function(){
   eventText.textContent = ' you bought some super food and your fish love it';
-  gameVariables.food ++;
+  if (gameVariables.money >= 10){
+    gameVariables.food ++;
   gameVariables.money -= 10;
   for (var i = 0; i < Fish.all.length; i++){
     Fish.all[i].saturation = randomNum(maxSaturation,minSaturation);
+  }  
+  } else {
+    eventText.textContent = 'you found some super food, alas you dont have enogh money to buy it and that one sick fish dies becouse of it.';
+  killxFish(1);
   }
 };
 
-// var  = function(){
-// };
-var eventOption = [tooMuchFood,heatWave, superFood, payDay, boughtFish , winFish, suficate, lameDay,fishShow,yourFishCanTalk, inheritFish, noFood, zombie, kidsWillBe , speedFish, popExpode];
+var eventOption = [tooMuchFood,heatWave, superFood, payDay, boughtFish , winFish, suficate, lameDay,fishShow, fishCanTalk, inheritFish, noFood, zombie, kidsWillBe , slowDay, speedFish, popExplode];
+
+// global funtion
+
+function killxFish(kills = 0){
+  if (kills < Fish.all.length - dead){
+    while (kills > 0){
+      var rand = randomNum(Fish.all.length);
+      if (!Fish.all[rand].isDead){
+        killFish(rand);
+        kills--;
+      }
+    }
+  }
+}
