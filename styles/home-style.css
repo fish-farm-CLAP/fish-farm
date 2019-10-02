@@ -78,4 +78,10 @@ button {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
+#instructions img {
+    height: 50px;
+}
+#instructions h4 {
+    
+}
 

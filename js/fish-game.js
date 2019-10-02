@@ -79,8 +79,7 @@ function draw() {
 }
 
 
-function mouseClicked() {
-  console.log(mouseX, mouseY);
+function mousePressed() {
   //check if a fish was clicked on:
 
   for (var i = 0; i < Fish.all.length; i++) {
