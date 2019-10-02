@@ -6,7 +6,33 @@ body {
     width: 980px;
     margin: 2% auto auto auto;
     background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
+    }
+
+body div:nth-child(1){
+    display: inline-block;
+    height: 50px;
+    width: 980px;
 }
+body div:nth-child(1) li {
+    display: inline-block;
+    margin: 10px,
+    height: 20px;
+    margin: 20px,5px,5px,20px;
+}
+body dvi:nth-child(1) ul:nth-child(1){
+    position: relative;
+    top: 10px;
+    left: 10px
+    margin: 5px,50px,5px,0;
+ }
+
+ body dvi:nth-child(1) ul:nth-child(2){
+     position: relative;
+     top: 10px;
+     left: 400px
+     margin: 5px, 0px, 5px, 50px;
+ }
+
 header {
     border: 10px outset #4652a6;
     font-family: 'Notable', sans-serif;
