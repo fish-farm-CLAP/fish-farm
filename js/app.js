@@ -10,9 +10,11 @@
 var scoreDisplay = document.getElementById('scoreArea');
 var moneyDisplay = document.getElementById('currentMoney');
 var foodDisplay = document.getElementById('currentFood');
+var highScoreDisplay = document.getElementById('highScore');
 var buyFishButton = document.getElementById('buyFish');
 var buyFoodButton = document.getElementById('buyFood');
 var gameHasEnded = false;
+var highScore = 0;
 
 
 //Counter for how many 'ticks' have gone by between events
@@ -55,11 +57,8 @@ function tick() {
     } else {
       newEvent++;
     }
-
   }
-
-  gameVariables.score += Fish.all.length*10;
-
+  gameVariables.score += Fish.all.length * 10;
 }
 
 //Load any saved data from the system
@@ -68,38 +67,19 @@ function loadGame() {
   var savedData = localStorage.getItem(storageKey);
 
   if (savedData !== null) {
-    //load Game variables
-    savedData = JSON.parse(savedData);
 
-    //Reasign all variables
-    gameVariables.money = savedData.money;
-    gameVariables.food = savedData.food;
-    gameVariables.day = savedData.day;
-    gameVariables.score = savedData.score;
-
-    //load fish
-    loadFish();
-
-    localStorage.removeItem(storageKey);
-
-  } else {
-
-    //Make 2 fish at the start of the game
-    new Fish();
-    new Fish();
+    highScore = parseInt(savedData);
 
   }
+  //Make 2 fish at the start of the game
+  new Fish();
+  new Fish();
 
 }
 
 //Save current game to the file system
-function saveGame() {
-
-  var dataSaved = JSON.stringify(gameVariables);
-  localStorage.setItem(storageKey, dataSaved);
-
-  saveFish();
-
+function saveScore() {
+  localStorage.setItem(storageKey, highScore);
 }
 
 //Create a new fish either at game start or when the user buys one
@@ -162,6 +142,10 @@ function displayVar() {
   scoreDisplay.textContent = `Score: ${gameVariables.score}`;
   moneyDisplay.textContent = `Money: $${gameVariables.money}`;
   foodDisplay.textContent = `Food Reserves: ${gameVariables.food}`;
+  if (gameVariables.score >= highScore) {
+    highScore = gameVariables.score;
+  }
+  highScoreDisplay.textContent = `High Score: ${highScore}`;
 
 }
 
@@ -181,6 +165,7 @@ function checkIfAllFishAreDead() {
 
 function gameOver() {
   gameHasEnded = true;
+  saveScore();
   console.log('game over!');
   var gameArea = document.getElementById('gameOver');
   var messageDisplayBox = document.createElement('form');

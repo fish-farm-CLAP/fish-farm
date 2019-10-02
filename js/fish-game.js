@@ -30,8 +30,10 @@ function draw() {
   //////////////fish movement:
   for (var i = 0; i < Fish.all.length; i++) {
     //if fish hits the left or right edge of the screen reverse its direction:
-    if (Fish.all[i].xPosition > (960 - fishLength) || Fish.all[i].xPosition < 0 && (Fish.all[i].isDead === false)) {
-      Fish.all[i].xSpeedMultiplier *= -1;
+    if (Fish.all[i].xPosition > (960 - fishLength) && (Fish.all[i].isDead === false)) {
+      Fish.all[i].xSpeedMultiplier = -1;
+    } else if (Fish.all[i].xPosition < 0 && (Fish.all[i].isDead === false)) {
+      Fish.all[i].xSpeedMultiplier = 1;
     }
 
     //move fish left or right only if it's not dead
@@ -56,7 +58,7 @@ function draw() {
     //if fish hits the top or bottom it reverses direction, if it's not dead:
     if ((Fish.all[i].yPosition > (450 - fishHeight) && Fish.all[i].isDead === false)) {
       Fish.all[i].ySpeedMultiplier = -1;
-    } else if (( Fish.all[i].yPosition < 0) && Fish.all[i].isDead === false) {
+    } else if ((Fish.all[i].yPosition < 0) && Fish.all[i].isDead === false) {
       Fish.all[i].ySpeedMultiplier = 1;
     }
 
@@ -94,7 +96,7 @@ function mousePressed() {
       console.log('fed a fish');
     }
   }
-  
+
   //update food/score/money counters
   displayVar();
 }
