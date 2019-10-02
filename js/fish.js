@@ -65,15 +65,15 @@ Fish.prototype.feedFish = function () {
 
 Fish.prototype.fishSpeedChanger = function () {
   var chance = Math.random();
-  if (chance < 0.2 && this.xSpeed < 10) {
+  if (chance < 0.2 && this.xSpeed < 10 + dead) {
     this.xSpeed++;
-  } else if (chance > 0.8 && this.xSpeed > 1) {
+  } else if (chance > 0.8 && this.xSpeed > 1 + dead) {
     this.xSpeed--;
   }
   chance = Math.random();
-  if (chance < 0.2 && this.ySpeed < 6) {
+  if (chance < 0.2 && this.ySpeed < 6 + dead) {
     this.ySpeed++;
-  } else if (chance > 0.8 && this.ySpeed > 1) {
+  } else if (chance > 0.8 && this.ySpeed > 1 + dead) {
     this.ySpeed--;
   }
   chance = Math.random();

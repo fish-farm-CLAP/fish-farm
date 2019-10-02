@@ -22,10 +22,13 @@ var newEvent = 0;
 
 //The main game variables. Will be stored localy as the game progresses.
 var gameVariables = {
-  money: 140,
+  money: 90,
   food: 10,
   score: 0,
 };
+
+// eslint-disable-next-line no-unused-vars
+var dead = 0;
 
 //Used to store the key at which the game information is stored
 const storageKey = 'playerScores';
@@ -44,21 +47,30 @@ function setUp() {
 function tick() {
 
   if (!gameHasEnded) {
+
     displayVar();
     checkIfAllFishAreDead();
-    fishSpeedUpdater()
+    fishSpeedUpdater();
 
     //Make your fish hungry
     hunger();
+
     //Sees if it is time to sttart a new event.
     if (newEvent >= 120) {
+
       choiceGeni();
       newEvent = 0;
+
     } else {
+
       newEvent++;
+
     }
+
   }
+
   gameVariables.score += Fish.all.length * 10;
+
 }
 
 //Load any saved data from the system
@@ -72,6 +84,7 @@ function loadGame() {
 
   }
   //Make 2 fish at the start of the game
+  new Fish();
   new Fish();
   new Fish();
 
@@ -139,13 +152,21 @@ function randomNum(max, min = 0) {
 
 function displayVar() {
 
-  scoreDisplay.textContent = `Score: ${gameVariables.score}`;
-  moneyDisplay.textContent = `Money: $${gameVariables.money}`;
-  foodDisplay.textContent = `Food Reserves: ${gameVariables.food}`;
-  if (gameVariables.score >= highScore) {
-    highScore = gameVariables.score;
+  if (!gameHasEnded) {
+
+    scoreDisplay.textContent = `Score: ${gameVariables.score}`;
+    moneyDisplay.textContent = `Money: $${gameVariables.money}`;
+    foodDisplay.textContent = `Food Reserves: ${gameVariables.food}`;
+
+    if (gameVariables.score >= highScore) {
+
+      highScore = gameVariables.score;
+
+    }
+
+    highScoreDisplay.textContent = `High Score: ${highScore}`;
+
   }
-  highScoreDisplay.textContent = `High Score: ${highScore}`;
 
 }
 
@@ -157,6 +178,7 @@ function checkIfAllFishAreDead() {
       numberOfDeadFish++;
     }
   }
+  dead = numberOfDeadFish;
   //compare the amount to the total number of fish
   if (numberOfDeadFish === Fish.all.length) {
     gameOver();
