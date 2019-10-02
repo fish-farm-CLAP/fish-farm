@@ -53,7 +53,7 @@ function tick () {
 
   }
 
-  displayVar();
+  // displayVar();
 
 }
 
