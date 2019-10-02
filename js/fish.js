@@ -5,8 +5,8 @@ const fishKey = "allFish";
 
 //Array to store all fish objects
 
-var maxSaturation = 150;
-var minSaturation = 100;
+var maxSaturation = 600;
+var minSaturation = 400;
 
 //Constructor Function
 var Fish = function() {
@@ -104,10 +104,4 @@ function hunger () {
 
   }
 
-}
-
-Fish.prototype.giveMoney = function() {
-  //show some kind of effect
-  //give the player $5 or something
-  //put this in a setInterval
 }
