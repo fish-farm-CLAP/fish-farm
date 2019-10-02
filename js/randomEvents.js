@@ -44,7 +44,6 @@ var suficate = function(){
   eventText.textContent = 'Your tank had an algie bloom and you lost a fish';
   if (Fish.all.length >= 3){
     Fish.all.splice(0,Fish.all.length / 2) ; // randomgrab of array object
-
   }
 };
 
