@@ -20,7 +20,7 @@ var newEvent = 0;
 
 //The main game variables. Will be stored localy as the game progresses.
 var gameVariables = {
-  money: 200,
+  money: 140,
   food: 10,
   score: 0,
 };
@@ -34,13 +34,13 @@ function setUp() {
   loadGame();
 
   //Start the game loop
-  setInterval(tick, 1000);
+  setInterval(tick, 250);
 
 }
 
 //Controls the game loop
 function tick() {
-  
+
   if (!gameHasEnded) {
     displayVar();
     checkIfAllFishAreDead();
@@ -48,7 +48,7 @@ function tick() {
     //Make your fish hungry
     hunger();
     //Sees if it is time to sttart a new event.
-    if (newEvent >= 30) {
+    if (newEvent >= 120) {
       //choiceGeni();
       newEvent = 0;
     } else {
@@ -56,6 +56,8 @@ function tick() {
     }
 
   }
+
+  gameVariables.score += Fish.all.length*10;
 
 }
 
@@ -115,10 +117,10 @@ function buyFood() {
 
   displayVar();
 
-  if (gameVariables.money >= 30) {
+  if (gameVariables.money >= 20) {
 
-    gameVariables.food += 15;
-    gameVariables.money -= 30;
+    gameVariables.food += 10;
+    gameVariables.money -= 20;
 
   } else {
 
@@ -133,9 +135,9 @@ function buyFish() {
 
   displayVar();
 
-  if (gameVariables.money >= 100) {
+  if (gameVariables.money >= 50) {
 
-    gameVariables.money -= 100;
+    gameVariables.money -= 50;
     new Fish();
 
   } else {
@@ -185,6 +187,9 @@ function gameOver() {
   var youLose = document.createElement('h6');
   youLose.textContent = 'You have o-fish-ally LOST the game!';
   messageDisplayBox.appendChild(youLose);
+  //Remove the buy buttons
+  buyFishButton.removeEventListener('click', buyFish);
+  buyFoodButton.removeEventListener('click', buyFood);
   //need to add a "start new game" button
   var newGameButton = document.createElement('input');
   messageDisplayBox.appendChild(newGameButton);
@@ -193,16 +198,14 @@ function gameOver() {
   newGameButton.addEventListener('submit', newGame);
 }
 
-buyFishButton.addEventListener('click', buyFish);
-buyFoodButton.addEventListener('click', buyFood);
-
-
 function newGame() {
   console.log('newGame button clicked');
   //set all game vars to their defaults, remove the html made by gameOver, etc
-  document.location.reload()
+  document.location.reload();
 }
 
+buyFishButton.addEventListener('click', buyFish);
+buyFoodButton.addEventListener('click', buyFood);
 
 //One page load either load save data or create a new game
 setUp();
