@@ -90,10 +90,10 @@ var fishShow = function(){
 };
 
 var kidsWillBe = function(){
-  eventText.textContent = 'you held a family friendly party but some of the kids wern\'t so friendly with your fish.  you lost two fish to their gruby little mits';
-  if (Fish.all.length <= 3){
-         killxFish(2) ;
-      }
+  eventText.textContent = 'you held a family friendly party but some of the kids wern\'t so friendly with your fish.  you lost two fish to their gruby little mits ';
+  if (Fish.all.length >= 3){
+    killxFish(2) ;
+  }
 };
 
 var inheritFish = function(){
@@ -134,20 +134,20 @@ var payDay = function(){
 
 var boughtFish = function(){
   eventText.textContent = 'you couldn\'t resist that fishie in the window, so you bought it';
-   buyFish();
+  buyFish();
 };
 
 var superFood = function(){
   eventText.textContent = ' you bought some super food and your fish love it';
   if (gameVariables.money >= 10){
     gameVariables.food ++;
-  gameVariables.money -= 10;
-  for (var i = 0; i < Fish.all.length; i++){
-    Fish.all[i].saturation = randomNum(maxSaturation,minSaturation);
-  }  
+    gameVariables.money -= 10;
+    for (var i = 0; i < Fish.all.length; i++){
+      Fish.all[i].saturation = randomNum(maxSaturation,minSaturation);
+    }
   } else {
     eventText.textContent = 'you found some super food, alas you dont have enogh money to buy it and that one sick fish dies becouse of it.';
-  killxFish(1);
+    killxFish(1);
   }
 };
 

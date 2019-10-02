@@ -69,7 +69,7 @@ function tick() {
 
   }
 
-  gameVariables.score += Fish.all.length * 10;
+  gameVariables.score += (Fish.all.length - dead) * 10;
 
 }
 
