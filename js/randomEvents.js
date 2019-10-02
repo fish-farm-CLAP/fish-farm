@@ -38,7 +38,7 @@ var tooMuchFood = function() {
 
 var winFish = function(){
   eventText.textContent = 'you had a lucky throw at a ring toss game and won a new goldfish';
-    newFish();
+    new Fish();
 }
 
 var suficate = function(){
