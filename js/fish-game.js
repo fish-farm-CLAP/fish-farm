@@ -54,8 +54,10 @@ function draw() {
     }
 
     //if fish hits the top or bottom it reverses direction, if it's not dead:
-    if ((Fish.all[i].yPosition > (450 - fishHeight) || Fish.all[i].yPosition < 0) && Fish.all[i].isDead === false) {
-      Fish.all[i].ySpeedMultiplier *= -1;
+    if ((Fish.all[i].yPosition > (450 - fishHeight) && Fish.all[i].isDead === false)) {
+      Fish.all[i].ySpeedMultiplier = -1;
+    } else if (( Fish.all[i].yPosition < 0) && Fish.all[i].isDead === false) {
+      Fish.all[i].ySpeedMultiplier = 1;
     }
 
     //move the fish up/down, if it's not dead:

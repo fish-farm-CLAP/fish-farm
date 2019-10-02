@@ -6,8 +6,7 @@ body {
     width: 980px;
     margin: 2% auto auto auto;
     background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
-    }
-
+}
 body div:nth-child(1){
     display: inline-block;
     height: 50px;
@@ -15,24 +14,10 @@ body div:nth-child(1){
 }
 body div:nth-child(1) li {
     display: inline-block;
-    margin: 10px,
+    margin: 10px;
     height: 20px;
     margin: 20px,5px,5px,20px;
 }
-body dvi:nth-child(1) ul:nth-child(1){
-    position: relative;
-    top: 10px;
-    left: 10px
-    margin: 5px,50px,5px,0;
- }
-
- body dvi:nth-child(1) ul:nth-child(2){
-     position: relative;
-     top: 10px;
-     left: 400px
-     margin: 5px, 0px, 5px, 50px;
- }
-
 header {
     border: 10px outset #4652a6;
     font-family: 'Notable', sans-serif;
@@ -51,9 +36,6 @@ h1 {
     text-align: center;
     font-style: italic;
 }
-td {
-    padding-left: 5px; 
-}
 #buttonsAndStats {
     display: inline;
 } 
@@ -70,6 +52,33 @@ h2 {
     width: 5%;
     font-size: 150%;
 }
+#scoreArea {
+    text-align: center;
+    font-size: 2.5em;
+    width: 260px;
+    margin: 0 auto;
+    background-color: rgba(156, 184, 184, 0.589);
+    font-family: 'Press Start 2P', cursive;
+}
+#resources {
+    margin-top: 10px;
+    width: 450px;
+    float: right;
+}
+#resources h3 {
+    display: inline;
+    font-size: 2em;
+    background-color: rgba(156, 184, 184, 0.589);
+    font-family: 'Fjalla One', sans-serif;
+    float: right;
+    margin-right: 30px;
+}
+#resources h3:first-child {
+    float: left;
+}
+#buyFish, #buyFood {
+    display: inline;
+}
 canvas {
     background: #69EBD0;
     background-size: 990px 500px;
@@ -78,26 +87,21 @@ canvas {
     z-index: 1;
 }
 #gameOver > form{
-  /* margin: auto; */
-  position: fixed;
-  width: 970px;
-  height: 400px;
-
-  top:320px;
-  
-  border: 5px ridge goldenrod;
-  background: black;
-
+    position: fixed;
+    width: 970px;
+    height: 400px;
+    top:380px;
+    border: 5px ridge goldenrod;
+    background: black;
 }
 #gameOver > form > input {
-  margin: 100px 0 0 380px;
-  height: 50px;
-  width: 200px;
+    margin: 100px 0 0 380px;
+    height: 50px;
+    width: 200px;
 }
-
 h6 {
-  padding-top: 100px;
-  text-align: center;
+    padding-top: 100px;
+    text-align: center;
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     color: red;

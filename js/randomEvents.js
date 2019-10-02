@@ -1,4 +1,4 @@
-
+console.log('loaded random events script');
 console.log('starteventjs');
 // global variables
 // var gameVariables = {
@@ -124,6 +124,7 @@ var heatWave = function(){
     Fish.all[i].saturation = minSaturation/4;
   buyFish();
   buyFish();
+}
 }
 
 var slowDay = function(){
