@@ -1,3 +1,24 @@
+* {
+    outline: 1px solid rgb(245, 40, 4);
+}
 body {
-    
+  background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);  
+}
+header {
+    border: 10px outset #4652a6;
+    font-family: 'Notable', sans-serif;
+    font-size: 350%;
+    width: 400px;
+    height: 70px;
+    margin: auto;
+    text-align: center;
+    background: #216869;
+    text-shadow: 1px 1px white;
+    padding: auto;
+}
+h1 {
+    width: 230px;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
 }
