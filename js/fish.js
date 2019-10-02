@@ -16,6 +16,8 @@ var Fish = function() {
   this.xPosition = randomNum(850, 10);
   this.yPosition = randomNum(395, 30);
 
+  this.xSpeed = 3;
+  this.ySpeed = 3;
   this.xSpeedMultiplier = -1;
   this.ySpeedMultiplier = -1;
 
@@ -59,6 +61,38 @@ Fish.prototype.feedFish = function () {
   }
 
 };
+
+
+Fish.prototype.fishSpeedChanger = function () {
+  var chance = Math.random();
+  if (chance < 0.2 && this.xSpeed < 10) {
+    this.xSpeed++;
+  } else if (chance > 0.8 && this.xSpeed > 1) {
+    this.xSpeed--;
+  }
+  chance = Math.random();
+  if (chance < 0.2 && this.ySpeed < 6) {
+    this.ySpeed++;
+  } else if (chance > 0.8 && this.ySpeed > 1) {
+    this.ySpeed--;
+  }
+  chance = Math.random();
+  if (chance < 0.05) {
+    this.xSpeedMultiplier *= -1;
+  }
+  chance = Math.random();
+  if (chance < 0.05) {
+    this.ySpeedMultiplier *= -1;
+  }
+
+}
+
+function fishSpeedUpdater() {
+  for (var i = 0; i < Fish.all.length; i++) {
+    Fish.all[i].fishSpeedChanger();
+  }
+}
+
 
 function killFish (index) {
 

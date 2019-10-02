@@ -44,6 +44,7 @@ function tick() {
   if (!gameHasEnded) {
     displayVar();
     checkIfAllFishAreDead();
+    fishSpeedUpdater()
 
     //Make your fish hungry
     hunger();
@@ -206,6 +207,9 @@ function newGame() {
 
 buyFishButton.addEventListener('click', buyFish);
 buyFoodButton.addEventListener('click', buyFood);
+
+
+
 
 //One page load either load save data or create a new game
 setUp();
