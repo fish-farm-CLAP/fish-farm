@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Fish Tank</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/game-style.css">
-    <link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-     
- 
-    <!-- this is the game code -->
 
-  </head>
-  <body>
-    <div><ul><li><a href="about-us.html">About clapworks</a></li><li><a href="index.html">front page</a></li></ul></div>
-    <header>FISH TANK</header>
-    <h1>A CLAP WORKS PRODUCTION</h1>
-    <div id="gameOver">
-      <!-- <p>placeholder events/messages area?</p> -->
+
+<head>
+  <title>Fish Tank</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/game-style.css">
+  <link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+
+
+  <!-- this is the game code -->
+
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li><a href="about-us.html">About clapworks</a></li>
+      <li><a href="index.html">front page</a></li>
+    </ul>
+  </div>
+  <header>FISH TANK</header>
+  <h1>A CLAP WORKS PRODUCTION</h1>
+  <div id="gameOver">
+    <!-- <p>placeholder events/messages area?</p> -->
+  </div>
+
+
+  <div id="randomEventDiv"></div>
+
+  <section id="scores">
+    <h3 id="highScore">High Score: 0</h3>
+    <h3 id="scoreArea">Score: 0</h3>
+  </section>
+
+
+  <section id="gameControls">
+    <button id="buyFish">Buy Fish: $50</button>
+    <button id="buyFood">Buy Food: $20</button>
+
+    <div id="resources">
+      <h3 id="currentMoney">Money:</h3>
+      <h3 id="currentFood">Food Reserves:</h3>
+
     </div>
+  </section>
 
-    
-    <div id="randomEventDiv"></div>
-      <button id = "buyFish">Buy Fish: $50</button>
-      <button id = "buyFood">Buy Food: $20</button>
-
-    <table>
-      <td id = "scoreArea">lorem</td>
-      <td id = "currentMoney">ipsum</td>
-      <td id = "currentFood">sit amet</td>
-    </table>
-      <!-- this is the script that links the to library we use for the code inside the canvas -->
+  <div>
+    <!-- this is the script that links the to library we use for the code inside the canvas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
     <script src="js/fish.js"></script>
-    <script src="js/randomEvents.js"></script>
     <script src="js/app.js"></script>
     <script src="js/fish-game.js"></script>
+    <script src="js/randomEvents.js"></script>
   </div>
+
 </html>
