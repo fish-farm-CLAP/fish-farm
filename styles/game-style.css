@@ -1,5 +1,5 @@
 * {
-    /* outline: 1px solid goldenrod; */
+    outline: 1px solid goldenrod;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body {
@@ -25,53 +25,44 @@ h1 {
     text-align: center;
     font-style: italic;
 }
+td {
+    padding-left: 5px; 
+}
 #buttonsAndStats {
     display: inline;
 } 
 button {
     background: #216869;
-    /* margin: auto; */
     width: 200px;
     height: 35px;
     font-size: 105%;
-    /* margin-left: 3px; */
     margin-top: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
-/* #stats {
-    display: inline;
-} */
 h2 {
     width: 5%;
     font-size: 150%;
 }
 canvas {
-    /* margin: 10px auto auto auto; */
-    /* box-shadow: 10px 10px grey, 10px 10px grey; */
     background: #69EBD0;
     background-size: 990px 500px;
-    /* font-size: 170%;
-    text-align: center;
-    color: white;
-    /* text-shadow: */
-    /* -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000; */ 
     border: 10px ridge silver; 
     border-radius: 5px;
-    /* padding: 1% */
-    margin: 0 1
+    z-index: 1;
 }
 #mainGameArea {
-    margin: auto;
+    /* margin: auto; */
     width: 320px;
 }
 article {
     background-color: black;
 }
 h6 {
+    font-family: 'Press Start 2P', cursive;
+    margin: auto;
     color: red;
-    font-size: 80px;
+    font-size: 150%;
+    background: black;
+    border: 5px ridge goldenrod;
 }
