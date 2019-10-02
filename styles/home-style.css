@@ -16,6 +16,9 @@ body {
     background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
     /* border: 15px #558564 ridge; */
 }
+#navItemDiv {
+  overflow: hidden;
+}
 body div:nth-child(1){
     display: inline-block;
     height: 50px;

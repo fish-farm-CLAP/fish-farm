@@ -77,7 +77,6 @@ h2 {
     text-align: center;
     font-size: 2.5em;
     display: inline;
-    /* width: 260px; */
     background-color: rgba(156, 184, 184, 0.589);
     font-family: 'Press Start 2P', cursive;
 }
@@ -114,18 +113,33 @@ canvas {
     border-radius: 5px;
     z-index: 1;
 }
+#randomEventDiv p {
+    font-size: 22px;
+    margin-top: 5px;
+    width: 980px;
+    height: 48px;
+    padding: 2px;
+    font-weight: bold;
+    background-color: rgba(156, 184, 184, 0.589);
+    font-family: 'Courier New', Courier, monospace;
+}
 #gameOver > form{
     position: fixed;
-    width: 970px;
-    height: 400px;
+    width: 670px;
+    height: 250px;
+    margin-left: 150px;
+    margin-top: 100px;
     top:380px;
     border: 5px ridge goldenrod;
     background: black;
 }
 #gameOver > form > input {
-    margin: 100px 0 0 380px;
+    margin-left: 235px;
+    margin-top: 20px;
     height: 50px;
     width: 200px;
+    font-size: 40px;
+    background-color: orange;
 }
 h6 {
     padding-top: 100px;
@@ -133,5 +147,5 @@ h6 {
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     color: red;
-    font-size: 290%;
+    font-size: 200%;
 }
