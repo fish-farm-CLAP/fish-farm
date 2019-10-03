@@ -92,6 +92,10 @@ img {
   border: coral solid 3px;
   border-radius: 60px;
 }
+#austinSection img {
+  border: hotpink solid 3px;
+  border-radius: 60px;
+}
 
 #austinSection p {
     background: rgba(0, 0, 0, 0.623);
@@ -101,5 +105,3 @@ img {
     border:5px outset #4652a6;
     padding: 2%
 }
-
-
