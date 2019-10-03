@@ -73,7 +73,12 @@ img {
     font-family: 'Lalezar', cursive;
     font-size: 22px;
     margin-left: 140px;
-    padding: 20px;
+    padding: 14px;
+    border: lime solid 3px;
+}
+#lucasSection img {
+    border: lime solid 3px;
+    border-radius: 60px;
 }
 #chrisSection p{
   font-size: 20px;
@@ -90,4 +95,13 @@ img {
 #austinSection img {
   border: hotpink solid 3px;
   border-radius: 60px;
+}
+
+#austinSection p {
+    background: rgba(0, 0, 0, 0.623);
+    margin-left: 140px;
+    font-family: 'Courier New', Courier, monospace;
+    color: goldenrod;
+    border:5px outset #4652a6;
+    padding: 2%
 }
