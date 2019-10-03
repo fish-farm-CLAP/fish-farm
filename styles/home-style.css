@@ -7,84 +7,91 @@ COLOR PALETTE
 #4652A6 LIBERTY
 */
 * {
-    /* outline: 2px solid goldenrod;  */
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* outline: 2px solid goldenrod;  */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body {
-    margin: 2% auto auto auto;
-    width: 960px;
-    background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
-    /* border: 15px #558564 ridge; */
+  margin: 2% auto auto auto;
+  width: 960px;
+  background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
+  /* border: 15px #558564 ridge; */
 }
 #navItemDiv {
   overflow: hidden;
 }
 body div:nth-child(1){
-    display: inline-block;
-    height: 50px;
-    width: 980px;
+  display: inline-block;
+  height: 50px;
+  width: 980px;
 }
 ul>li {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
 li>a {
-    text-decoration: none;
-    color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-     font-size: 2em;
+  text-decoration: none;
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px  1px 0 #000,
+  1px  1px 0 #000;
+  font-size: 2em;
+  font-family: 'Courier New', Courier, monospace;
 }
 ul:nth-child(1){
-    text-align: start;
+  text-align: start;
 }
  
 ul>li:nth-of-type(2){
-    text-align: right;
+  text-align: right;
 }
 header {
-    border: 10px outset #4652a6;
-    font-family: 'Notable', sans-serif;
-    font-size: 350%;
-    width: 400px;
-    height: 70px;
-    margin: auto;
-    text-align: center;
-    background: #216869;
-    text-shadow: 1px 1px white;
-    padding: auto;
+  border: 10px outset #4652a6;
+  font-family: 'Notable', sans-serif;
+  font-size: 350%;
+  width: 400px;
+  height: 70px;
+  margin: auto;
+  text-align: center;
+  background: #216869;
+  text-shadow: 1px 1px white;
+  padding: auto;
 }
 h1 {
-    width: 230px;
-    margin: auto;
-    text-align: center;
-    font-style: italic;
-    /* border-right: 3px ridge goldenrod;
-    border-left: 3px ridge goldenrod;
-    border-bottom: 3px ridge goldenrod; */
+  width: 230px;
+  margin: auto;
+  text-align: center;
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px  1px 0 #000,
+  1px  1px 0 #000;
+  font-style: italic;
+  /* border-right: 3px ridge goldenrod;
+  border-left: 3px ridge goldenrod;
+  border-bottom: 3px ridge goldenrod; */
 }
 #mainBodyDiv{
-    width: 960px;
-    height: 450px;
-    margin: 10px auto auto auto;
-    /* box-shadow: 10px 10px grey, 10px 10px grey; */
-    /* border: 100px solid goldenrod; */
-    background-image: url(http://www.maharajatravels.in/wp-content/uploads/2015/02/underwater-bg.jpg);
-    background-size: 990px 500px;
-    font-size: 170%;
-    text-align: center;
-    color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-    border: 10px inset #69EBD0; 
-    border-radius: 5px;
-    padding: 1%
+  width: 960px;
+  height: 450px;
+  margin: 10px auto auto auto;
+  /* box-shadow: 10px 10px grey, 10px 10px grey; */
+  /* border: 100px solid goldenrod; */
+  background-image: url(http://www.maharajatravels.in/wp-content/uploads/2015/02/underwater-bg.jpg);
+  background-size: 990px 500px;
+  font-size: 170%;
+  text-align: center;
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px  1px 0 #000,
+  1px  1px 0 #000;
+  border: 10px inset #69EBD0; 
+  border-radius: 5px;
+  padding: 1%
 }
 
 /* div img {
@@ -97,15 +104,15 @@ h1 {
     text-align: center;
 }
 button {
-    background: coral;
-    /* margin: auto; */
-    width: 200px;
-    height: 50px;
-    font-size: 105%;
-    /* margin-left: 3px; */
-    margin-top: 40px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+  background: coral;
+  /* margin: auto; */
+  width: 200px;
+  height: 50px;
+  font-size: 105%;
+  /* margin-left: 3px; */
+  margin-top: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 }
 a {
   text-decoration: none;
@@ -120,7 +127,7 @@ button:hover {
   overflow: auto;
 }
 #instructions img {
-    height: 50px;
+  height: 50px;
 }
 #instructions h4 {
   font-family: 'Lobster', cursive;
