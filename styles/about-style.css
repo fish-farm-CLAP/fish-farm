@@ -106,3 +106,14 @@ img {
     padding: 2%
 }
 
+
+#paulSection p {
+   background-color: rgba(26, 41, 65, 0.726);
+   font-size: 22px;
+   color: rgb(172, 231, 165) ;
+   padding: 10px;
+   margin-left: 140px;
+   font-weight: bold;
+   font-family: 'Vollkorn SC', serif;
+
+  }
