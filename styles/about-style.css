@@ -1,0 +1,55 @@
+* {
+    outline: 1px solid rgb(245, 40, 4);
+}
+body {
+  background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg); 
+  width: 980px;
+  margin: 2% auto auto auto; 
+}
+body div:nth-child(1){
+    display: inline-block;
+    height: 50px;
+    width: 980px;
+}
+ul>li {
+    float: left;
+    width: 50%;
+}
+a {
+    text-decoration: none;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+     font-size: 2em;
+}
+ul:nth-child(1){
+    text-align: start;
+}
+ 
+ul>li:nth-of-type(2){
+    text-align: right;
+}
+header {
+    border: 10px outset #4652a6;
+    font-family: 'Notable', sans-serif;
+    font-size: 350%;
+    width: 400px;
+    height: 70px;
+    margin: auto;
+    text-align: center;
+    background: #216869;
+    text-shadow: 1px 1px white;
+    padding: auto;
+}
+h1 {
+    width: 230px;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+}
+img {
+    width: 100px;
+}

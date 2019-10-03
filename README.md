@@ -7,48 +7,15 @@ Actual Team:
 - Austin Brown 
 - Paul Bennett
 
-Our project is to create a Fish Farm game. The basic structure is to have a 'fish tank' window that has animated fish and an interaction space that displays random events for the player to interact with.
+Our project is to create a Fish Farm game.
 
+Game Overview:
+  You start the game with 2 fish, $100, and 10 fish food. Each fish has a corresponding button on the page. Periodically, each fish gets hungry. If the fish's button is clicked on and the player has fish food, one food will be subtracted and the fish's hunger timer will be reset. If a fish goes hungry for too long, it dies. Periodically, the fish will increase your amount of money based on how many times they've been fed. Money is used to buy new fish and more fish food. Difficulty increases over time by the way of random events affecting the cost of fish food, the amount of fish alive, and the hunger of the fish. The game ends when all fish are dead. Throughout the game, a score counter is incremented, and the goal is to get a high score.
 
+![Wireframes](https://github.com/fish-farm-CLAP/fish-farm/blob/development/assets/fishProjectWireframe_gamePage.png?raw=true)
 
-Scope:
+![Domain Model](https://github.com/fish-farm-CLAP/fish-farm/blob/development/assets/Domain%20Model%20v3.png)
 
-IN: 	
-	1. The web app will show moving fish on the page.
-	2. Dynamic events will occur to keep the game interesting.
-	3. There will be user input to affect the animation of the fish tank and the value of gameplay variables.
-	4. The user's progress in the game will be saved in local storage.
-OUT: 
-	1. There will not be any kind of multiplayer.
+User Stories: https://docs.google.com/document/d/1j5RZY6TRFUzcjTc_3r-D8GJ6wO4n88DOJ6uwv616IDM/edit?usp=sharing
 
-
-MVP:
-	A play-space on the game page that has moving fish, buttons that change variables for number of fish, amount of fish food, and amount of money, a button to progress to the next day, a score counter, a day counter, and random events that affect the variables every time the 'next day' button is pressed.
-
-
-Stretch Goals:
-	1. Add more random events.
-	2. Add different images for the fish.
-	3. Make our animations better.
-	4. Add sound effects.
-	5. Add more variables like fish age.
-
-
-Functional Requirements:
-	1. The user can progress through the game by pressing a button.
-	2. The button triggers a function to update the game.
-
-
-Data Flow:
-	1. User enters the site.
-	2. User goes to game page from home page.
-	3. Game function fires on load of the game page.
-		a. Checks for local storage
-		b. Starts new game or resumes old game
-	4. The game ends when a loss condition is met (no fish).
-	5. The user can go the about me or home page or game page from any page.
-
-
-Domain Modeling: 
-  TBC
-	
+[Requirements](./requirements.md)
