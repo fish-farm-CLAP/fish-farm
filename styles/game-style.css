@@ -159,3 +159,15 @@ h6 {
     font-size: 150%;
     padding-bottom: 20px;
 }
+#eventBar {
+  width: 1%;
+  height: 10px;
+  background: lightblue;
+}
+#progress {
+  width: 100%;
+  
+  margin-top: 5px;
+  outline: coral solid 2px;
+  background: teal;
+}

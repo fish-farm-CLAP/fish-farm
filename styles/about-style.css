@@ -69,11 +69,42 @@ img {
 }
 #lucasSection p {
     background-color: rgba(0, 0, 0, 0.664);
-    color: rgb(255, 255, 255);
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    color: rgb(240, 240, 240);
+    font-family: 'Lalezar', cursive;
+    font-size: 22px;
     margin-left: 140px;
     padding: 20px;
 }
+
+#chrisSection p{
+  font-size: 20px;
+  font-family: 'Righteous', cursive;
+  background-color: rgba(0, 83, 83, 0.582);
+  color:rgb(255, 127, 80);
+  margin-left: 140px;
+  padding: 10px;
+}
+#chrisSection img {
+  border: coral solid 3px;
+  border-radius: 60px;
+}
+
+#austinSection p {
+    background: rgba(0, 0, 0, 0.623);
+    margin-left: 140px;
+    font-family: 'Courier New', Courier, monospace;
+    color: goldenrod;
+    border:5px outset #4652a6;
+    padding: 2%
+}
+
 #paulSection p {
+   background-color: rgba(26, 41, 65, 0.726);
+   font-size: 22px;
+   color: rgb(172, 231, 165) ;
+   padding: 10px;
+   margin-left: 140px;
+   font-weight: bold;
+   font-family: 'Vollkorn SC', serif;
+
   }
