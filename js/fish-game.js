@@ -6,10 +6,13 @@ var fishHeight = 50;
 var goldfish;
 var cracker;
 
+var canvasDiv = document.getElementById('canvasDiv');
+
+
 
 function setup() {
-  createCanvas(canvasWidth, canvasHeight);
-
+  var canvas = createCanvas(canvasWidth, canvasHeight);
+  canvas.parent(canvasDiv);
   backgroundImg = loadImage('assets/underwater.jpg');
 
   goldfish = {

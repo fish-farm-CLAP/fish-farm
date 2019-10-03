@@ -40,6 +40,7 @@ function setUp() {
 
   //Start the game loop
   setInterval(tick, 250);
+  setInterval(playThemeSong, 1000);
 
 }
 
@@ -120,6 +121,7 @@ function buyFood() {
 
   } else {
 
+    errorSound.play();
     //Tell the user they are short on cash
 
   }
@@ -138,6 +140,7 @@ function buyFish() {
 
   } else {
 
+    errorSound.play();
     //Inform user they are short on cash
 
   }
@@ -184,6 +187,7 @@ function checkIfAllFishAreDead() {
   //compare the amount to the total number of fish
   if (numberOfDeadFish === Fish.all.length) {
     gameOver();
+    gameOverSound.play();
   }
 }
 
@@ -195,7 +199,7 @@ function gameOver() {
   var messageDisplayBox = document.createElement('form');
   gameArea.appendChild(messageDisplayBox);
   var youLose = document.createElement('h6');
-  youLose.textContent = 'You have o-fish-ally LOST the game!';
+  youLose.textContent = 'You have o-fish-ially LOST the game!';
   messageDisplayBox.appendChild(youLose);
   //Remove the buy buttons
   buyFishButton.removeEventListener('click', buyFish);
@@ -216,6 +220,8 @@ function newGame() {
 
 buyFishButton.addEventListener('click', buyFish);
 buyFoodButton.addEventListener('click', buyFood);
+
+
 
 
 
