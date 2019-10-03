@@ -40,7 +40,7 @@ function setUp() {
 
   //Start the game loop
   setInterval(tick, 250);
-  setInterval(playThemeSong, 1000);
+  setInterval(playThemeSong, 0);
 
 }
 
