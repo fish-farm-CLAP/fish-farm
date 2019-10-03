@@ -106,17 +106,19 @@ h2 {
 #buyFish, #buyFood {
     display: inline;
 }
+#canvasDiv {
+    height: 470px;
+}
 canvas {
     background: #69EBD0;
     background-size: 990px 500px;
     border: 10px ridge silver; 
     border-radius: 5px;
-    z-index: 1;
 }
 #randomEventDiv p {
     font-size: 22px;
     margin-top: 5px;
-    width: 980px;
+    width: 975px;
     height: 48px;
     padding: 2px;
     font-weight: bold;
@@ -129,7 +131,7 @@ canvas {
     height: 250px;
     margin-left: 150px;
     margin-top: 100px;
-    top:380px;
+    top: 310px;
     border: 5px ridge goldenrod;
     background: black;
 }

@@ -193,7 +193,7 @@ function gameOver() {
   var messageDisplayBox = document.createElement('form');
   gameArea.appendChild(messageDisplayBox);
   var youLose = document.createElement('h6');
-  youLose.textContent = 'You have o-fish-ally LOST the game!';
+  youLose.textContent = 'You have o-fish-ially LOST the game!';
   messageDisplayBox.appendChild(youLose);
   //Remove the buy buttons
   buyFishButton.removeEventListener('click', buyFish);
