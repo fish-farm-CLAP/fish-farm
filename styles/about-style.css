@@ -69,42 +69,10 @@ img {
 }
 #lucasSection p {
     background-color: rgba(0, 0, 0, 0.664);
-    color: rgb(255, 255, 255);
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    color: rgb(240, 240, 240);
+    font-family: 'Lalezar', cursive;
+    font-size: 22px;
     margin-left: 140px;
     padding: 20px;
 }
 
-button::before {
-    content: ""
-    ... more styling goes here...
-  }
-button::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    bottom: -50%;
-    left: -50%;
-    background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
-    transform: rotateZ(60deg) translate(-5em, 7.5em);
-  }
-  button {
-    background: #e5ac8e;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 0.5em;
-    padding: 0 1em;
-    position: relative;
-    overflow: hidden;
-    line-height: 32px;
-  }
-  button:hover::after, button:focus::after {
-    animation: sheen 1s forwards;
-  }
-  @keyframes sheen {
-    100% {
-      transform: rotateZ(60deg) translate(1em, -9em);
-    }
-  }
