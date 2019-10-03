@@ -24,6 +24,7 @@ a {
     -1px  1px 0 #000,
      1px  1px 0 #000;
      font-size: 2em;
+     font-family: 'Courier New', Courier, monospace;
 }
 ul:nth-child(1){
     text-align: start;
@@ -48,9 +49,25 @@ h1 {
     width: 230px;
     margin: auto;
     text-align: center;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px  1px 0 #000,
+    1px  1px 0 #000;
     font-style: italic;
 }
-
+section {
+    width: 960px;
+    height: 120px;
+    margin-top: 30px;
+}
 img {
-    width: 100px;
+    width: 120px;
+    float: left;
+    border-radius: 60px;
+}
+#lucasSection {
+    background-color: black;
+    color: white;
 }
