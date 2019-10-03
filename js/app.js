@@ -98,9 +98,9 @@ function saveScore() {
 //Create a new fish either at game start or when the user buys one
 function newFish() {
 
-  var rand = randomNum(10);
+  var rand = randomNum(30);
 
-  if (rand === -1) {
+  if (rand === 1) {
     new Fish('cracker');
   } else {
     new Fish('goldfish');

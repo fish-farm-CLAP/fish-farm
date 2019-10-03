@@ -22,12 +22,12 @@ function setup() {
   };
 
   cracker = {
-    fishPic: loadImage('Cracker.png'),
-    fishPicReversed: loadImage('Cracker-Reversed.png'),
-    fishHungry: loadImage('Cracker-Hungry.png'),
-    fishHungryReversed: loadImage('Cracker-Hungry-Reversed.png'),
-    fishDead: loadImage('Cracker-Dead.png'),
-    fishDeadReversed: loadImage('Cracker.Dead-Reverse.png'),
+    fishPic: loadImage('assets/cracker.png'),
+    fishPicReversed: loadImage('assets/cracker-Reversed.png'),
+    fishHungry: loadImage('assets/cracker-Hungry.png'),
+    fishHungryReversed: loadImage('assets/cracker-Hungry-Reversed.png'),
+    fishDead: loadImage('assets/cracker-Dead.png'),
+    fishDeadReversed: loadImage('assets/cracker-Dead-Reversed.png'),
   };
 
 }
