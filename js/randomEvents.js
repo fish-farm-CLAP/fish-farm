@@ -65,12 +65,12 @@ var zombie = function(){
 
 
 var popExplode = function(){
-  eventText.textContent = 'One of your fish laid eggs and now you have 5 baby fish.';
-  new Fish();
-  new Fish();
-  new Fish();
-  new Fish();
-  new Fish();
+  eventText.textContent = 'one of your fish laid eggs and now you have 5 baby fish';
+  newFish();
+  newFish();
+  newFish();
+  newFish();
+  newFish();
 };
 
 
@@ -96,10 +96,10 @@ var kidsWillBe = function(){
 };
 
 var inheritFish = function(){
-  eventText.textContent = 'Your friend is moving and knows that you will care for their fish and offers them to you.';
-  new Fish();
-  new Fish();
-  new Fish();
+  eventText.textContent = 'your friend is moving and knows that you will care for their fish and offers them to you';
+  newFish();
+  newFish();
+  newFish();
 };
 
 var speedFish = function(){

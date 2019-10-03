@@ -85,9 +85,9 @@ function loadGame() {
 
   }
   //Make 2 fish at the start of the game
-  new Fish();
-  new Fish();
-  new Fish();
+  newFish();
+  newFish();
+  newFish();
 
 }
 
@@ -98,12 +98,14 @@ function saveScore() {
 
 //Create a new fish either at game start or when the user buys one
 function newFish() {
-  //Get a new fish image
-  //var randomIndex = randomNum(images.length);
-  //need more fish images
 
-  //creat new fish object
-  new Fish();
+  var rand = randomNum(30);
+
+  if (rand === 1) {
+    new Fish('cracker');
+  } else {
+    new Fish('goldfish');
+  }
 
 }
 
@@ -134,7 +136,7 @@ function buyFish() {
   if (gameVariables.money >= 50) {
 
     gameVariables.money -= 50;
-    new Fish();
+    newFish();
 
   } else {
 

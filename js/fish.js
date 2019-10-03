@@ -9,9 +9,11 @@ var maxSaturation = 600;
 var minSaturation = 400;
 
 //Constructor Function
-var Fish = function () {
+var Fish = function (fishType = 'goldfish') {
   //used in rendering
   this.image = null;
+
+  this.fishType = fishType;
 
   this.xPosition = randomNum(850, 10);
   this.yPosition = randomNum(395, 30);
