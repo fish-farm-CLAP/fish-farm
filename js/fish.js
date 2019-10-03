@@ -9,9 +9,11 @@ var maxSaturation = 600;
 var minSaturation = 400;
 
 //Constructor Function
-var Fish = function () {
+var Fish = function (fishType = 'goldfish') {
   //used in rendering
   this.image = null;
+
+  this.fishType = fishType;
 
   this.xPosition = randomNum(850, 10);
   this.yPosition = randomNum(395, 30);
@@ -26,6 +28,7 @@ var Fish = function () {
   this.hungry = false;
   this.isDead = false;
 
+  bubbleSound.play();
   Fish.all.push(this);
 };
 
@@ -37,6 +40,7 @@ Fish.prototype.timesFed = function () {
   this.fed++;
   if (this.fed % 3 === 0) {
     gameVariables.money += 10;
+    moneySound.play();
   }
 };
 
@@ -49,9 +53,11 @@ Fish.prototype.feedFish = function () {
     this.hungry = false;
     gameVariables.food--;
     this.timesFed();
+    biteSound.play();
 
   } else if (gameVariables.food === 0) {
 
+    errorSound.play();
     //alert that they are out of food
 
   } else if (!this.hungry) {
@@ -98,6 +104,7 @@ function killFish(index) {
 
   //Fish.all.splice(index, 1);
   Fish.all[index].isDead = true;
+  deathSound.play();
 
 }
 
@@ -131,13 +138,45 @@ function hunger() {
     //Should be set to 20
     Fish.all[i].saturation -= randomNum(20);
 
-    if (Fish.all[i].saturation <= 0) {
+    if (Fish.all[i].saturation <= 0 && Fish.all[i].isDead === false) {
       killFish(i);
     } else if (Fish.all[i].saturation <= minSaturation / 2) {
       Fish.all[i].hungry = true;
-    } else  {
+    } else {
       Fish.all[i].hungry = false;
     }
   }
 
 }
+
+
+function Sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){
+    this.sound.play();
+  }
+  this.stop = function(){
+    this.sound.pause();
+  }
+}
+
+//call sound effects with var.play();
+var moneySound = new Sound('assets/money.wav');
+var biteSound = new Sound('assets/biteSound.ogg');
+var bubbleSound = new Sound('assets/bubbleSound.wav');
+var deathSound = new Sound('assets/deathSound.wav');
+var gameOverSound = new Sound('assets/gameOver.wav');
+var errorSound = new Sound('assets/errorSound.wav');
+var gameThemeSong = new Sound('assets/gameThemeSound.wav');
+
+function playThemeSong() {
+  gameThemeSong.play();
+}
+
+
+

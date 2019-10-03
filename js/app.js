@@ -40,6 +40,7 @@ function setUp() {
 
   //Start the game loop
   setInterval(tick, 250);
+  setInterval(playThemeSong, 0);
 
 }
 
@@ -84,9 +85,9 @@ function loadGame() {
 
   }
   //Make 2 fish at the start of the game
-  new Fish();
-  new Fish();
-  new Fish();
+  newFish();
+  newFish();
+  newFish();
 
 }
 
@@ -97,12 +98,14 @@ function saveScore() {
 
 //Create a new fish either at game start or when the user buys one
 function newFish() {
-  //Get a new fish image
-  //var randomIndex = randomNum(images.length);
-  //need more fish images
 
-  //creat new fish object
-  new Fish();
+  var rand = randomNum(30);
+
+  if (rand === 1) {
+    new Fish('cracker');
+  } else {
+    new Fish('goldfish');
+  }
 
 }
 
@@ -118,6 +121,7 @@ function buyFood() {
 
   } else {
 
+    errorSound.play();
     //Tell the user they are short on cash
 
   }
@@ -132,10 +136,11 @@ function buyFish() {
   if (gameVariables.money >= 50) {
 
     gameVariables.money -= 50;
-    new Fish();
+    newFish();
 
   } else {
 
+    errorSound.play();
     //Inform user they are short on cash
 
   }
@@ -182,6 +187,7 @@ function checkIfAllFishAreDead() {
   //compare the amount to the total number of fish
   if (numberOfDeadFish === Fish.all.length) {
     gameOver();
+    gameOverSound.play();
   }
 }
 
@@ -214,6 +220,8 @@ function newGame() {
 
 buyFishButton.addEventListener('click', buyFish);
 buyFoodButton.addEventListener('click', buyFood);
+
+
 
 
 
