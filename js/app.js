@@ -40,6 +40,7 @@ function setUp() {
 
   //Start the game loop
   setInterval(tick, 250);
+  setInterval(playThemeSong, 1000);
 
 }
 
@@ -118,6 +119,7 @@ function buyFood() {
 
   } else {
 
+    errorSound.play();
     //Tell the user they are short on cash
 
   }
@@ -136,6 +138,7 @@ function buyFish() {
 
   } else {
 
+    errorSound.play();
     //Inform user they are short on cash
 
   }
@@ -182,6 +185,7 @@ function checkIfAllFishAreDead() {
   //compare the amount to the total number of fish
   if (numberOfDeadFish === Fish.all.length) {
     gameOver();
+    gameOverSound.play();
   }
 }
 
@@ -214,6 +218,8 @@ function newGame() {
 
 buyFishButton.addEventListener('click', buyFish);
 buyFoodButton.addEventListener('click', buyFood);
+
+
 
 
 
