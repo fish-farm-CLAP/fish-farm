@@ -5,17 +5,19 @@ const fishKey = "allFish";
 
 //Array to store all fish objects
 
-var maxSaturation = 150;
-var minSaturation = 100;
+var maxSaturation = 600;
+var minSaturation = 400;
 
 //Constructor Function
-var Fish = function() {
+var Fish = function () {
   //used in rendering
   this.image = null;
 
   this.xPosition = randomNum(850, 10);
   this.yPosition = randomNum(395, 30);
 
+  this.xSpeed = 3;
+  this.ySpeed = 3;
   this.xSpeedMultiplier = -1;
   this.ySpeedMultiplier = -1;
 
@@ -32,7 +34,7 @@ Fish.all = [];
 
 //Increase the Age by 10 time fed
 Fish.prototype.timesFed = function () {
-  this.fed ++;
+  this.fed++;
   if (this.fed % 3 === 0) {
     gameVariables.money += 10;
   }
@@ -60,7 +62,39 @@ Fish.prototype.feedFish = function () {
 
 };
 
-function killFish (index) {
+
+Fish.prototype.fishSpeedChanger = function () {
+  var chance = Math.random();
+  if (chance < 0.2 && this.xSpeed < 10 + dead) {
+    this.xSpeed++;
+  } else if (chance > 0.8 && this.xSpeed > 1 + dead) {
+    this.xSpeed--;
+  }
+  chance = Math.random();
+  if (chance < 0.2 && this.ySpeed < 6 + dead) {
+    this.ySpeed++;
+  } else if (chance > 0.8 && this.ySpeed > 1 + dead) {
+    this.ySpeed--;
+  }
+  chance = Math.random();
+  if (chance < 0.05) {
+    this.xSpeedMultiplier *= -1;
+  }
+  chance = Math.random();
+  if (chance < 0.05) {
+    this.ySpeedMultiplier *= -1;
+  }
+
+}
+
+function fishSpeedUpdater() {
+  for (var i = 0; i < Fish.all.length; i++) {
+    Fish.all[i].fishSpeedChanger();
+  }
+}
+
+
+function killFish(index) {
 
   //Fish.all.splice(index, 1);
   Fish.all[index].isDead = true;
@@ -90,24 +124,20 @@ function loadFish() {
 
 }
 
-function hunger () {
+function hunger() {
 
   for (var i = 0; i < Fish.all.length; i++) {
 
+    //Should be set to 20
     Fish.all[i].saturation -= randomNum(20);
 
     if (Fish.all[i].saturation <= 0) {
       killFish(i);
     } else if (Fish.all[i].saturation <= minSaturation / 2) {
       Fish.all[i].hungry = true;
+    } else  {
+      Fish.all[i].hungry = false;
     }
-
   }
 
-}
-
-Fish.prototype.giveMoney = function() {
-  //show some kind of effect
-  //give the player $5 or something
-  //put this in a setInterval
 }

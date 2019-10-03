@@ -16,6 +16,35 @@ body {
     background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
     /* border: 15px #558564 ridge; */
 }
+#navItemDiv {
+  overflow: hidden;
+}
+body div:nth-child(1){
+    display: inline-block;
+    height: 50px;
+    width: 980px;
+}
+ul>li {
+    float: left;
+    width: 50%;
+}
+li>a {
+    text-decoration: none;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+     font-size: 2em;
+}
+ul:nth-child(1){
+    text-align: start;
+}
+ 
+ul>li:nth-of-type(2){
+    text-align: right;
+}
 header {
     border: 10px outset #4652a6;
     font-family: 'Notable', sans-serif;
@@ -68,14 +97,50 @@ h1 {
     text-align: center;
 }
 button {
-    background: #216869;
+    background: coral;
     /* margin: auto; */
     width: 200px;
-    height: 35px;
+    height: 50px;
     font-size: 105%;
     /* margin-left: 3px; */
-    margin-top: 10px;
+    margin-top: 40px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
-
+a {
+  text-decoration: none;
+  color: black;
+  padding:10px 23px;
+}
+button:hover {
+  background: teal;
+  color: coral;
+}
+#instructions {
+  overflow: auto;
+}
+#instructions img {
+    height: 50px;
+}
+#instructions h4 {
+  font-family: 'Lobster', cursive;
+}
+#noMarginP {
+  margin-bottom: 0px;
+}
+#instructions p {
+  font-family: 'Squada One', cursive;
+  margin-bottom: 1em;
+  background-color: rgba(245, 245, 245, 0.178);
+}
+#leftInstructions {
+float: left;
+width: 400px;
+}
+#rightInstructions {
+  float: right;
+  width: 400px;
+}
+.floatImg {
+  float:left;
+}

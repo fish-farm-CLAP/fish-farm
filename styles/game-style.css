@@ -1,11 +1,39 @@
 * {
-    outline: 1px solid goldenrod;
+    /* outline: 1px solid goldenrod; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body {
     width: 980px;
     margin: 2% auto auto auto;
     background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
+}
+body div:nth-child(1){
+    display: inline-block;
+    height: 50px;
+    width: 980px;
+}
+
+ul>li {
+    float: left;
+    width: 50%;
+}
+a {
+    text-decoration: none;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+     font-size: 2em;
+}
+ul:nth-child(1){
+    text-align: start;
+}
+ 
+ul>li:nth-of-type(2){
+    text-align: right;
+
 }
 header {
     border: 10px outset #4652a6;
@@ -25,9 +53,7 @@ h1 {
     text-align: center;
     font-style: italic;
 }
-td {
-    padding-left: 5px; 
-}
+
 #buttonsAndStats {
     display: inline;
 } 
@@ -44,6 +70,42 @@ h2 {
     width: 5%;
     font-size: 150%;
 }
+#scores {
+    height: 80px;
+}
+#scoreArea, #highScore {
+    text-align: center;
+    font-size: 2.5em;
+    display: inline;
+    background-color: rgba(156, 184, 184, 0.589);
+    font-family: 'Press Start 2P', cursive;
+}
+#scoreArea {
+    float: right;
+}
+#highScore {
+    float: left;
+    width: 500px;
+}
+#resources {
+    margin-top: 10px;
+    width: 450px;
+    float: right;
+}
+#resources h3 {
+    display: inline;
+    font-size: 2em;
+    background-color: rgba(156, 184, 184, 0.589);
+    font-family: 'Fjalla One', sans-serif;
+    float: right;
+    margin-right: 30px;
+}
+#resources h3:first-child {
+    float: left;
+}
+#buyFish, #buyFood {
+    display: inline;
+}
 canvas {
     background: #69EBD0;
     background-size: 990px 500px;
@@ -51,18 +113,39 @@ canvas {
     border-radius: 5px;
     z-index: 1;
 }
-#mainGameArea {
-    /* margin: auto; */
-    width: 320px;
+#randomEventDiv p {
+    font-size: 22px;
+    margin-top: 5px;
+    width: 980px;
+    height: 48px;
+    padding: 2px;
+    font-weight: bold;
+    background-color: rgba(156, 184, 184, 0.589);
+    font-family: 'Courier New', Courier, monospace;
 }
-article {
-    background-color: black;
+#gameOver > form{
+    position: fixed;
+    width: 670px;
+    height: 250px;
+    margin-left: 150px;
+    margin-top: 100px;
+    top:380px;
+    border: 5px ridge goldenrod;
+    background: black;
+}
+#gameOver > form > input {
+    margin-left: 235px;
+    margin-top: 20px;
+    height: 50px;
+    width: 200px;
+    font-size: 40px;
+    background-color: orange;
 }
 h6 {
+    padding-top: 100px;
+    text-align: center;
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     color: red;
-    font-size: 150%;
-    background: black;
-    border: 5px ridge goldenrod;
+    font-size: 200%;
 }
