@@ -1,5 +1,5 @@
 * {
-    outline: 1px solid rgb(245, 40, 4);
+    /* outline: 1px solid rgb(245, 40, 4); */
 }
 body {
   background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg); 
@@ -25,11 +25,11 @@ a {
      1px  1px 0 #000;
      font-size: 2em;
      font-family: 'Courier New', Courier, monospace;
+     font-weight: bolder;
 }
 ul:nth-child(1){
     text-align: start;
 }
- 
 ul>li:nth-of-type(2){
     text-align: right;
 }
@@ -67,7 +67,12 @@ img {
     float: left;
     border-radius: 60px;
 }
-#lucasSection {
-    background-color: black;
-    color: white;
+#lucasSection p {
+    background-color: rgba(0, 0, 0, 0.664);
+    color: rgb(240, 240, 240);
+    font-family: 'Lalezar', cursive;
+    font-size: 22px;
+    margin-left: 140px;
+    padding: 20px;
 }
+

@@ -14,7 +14,6 @@ body {
   margin: 2% auto auto auto;
   width: 960px;
   background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
-  /* border: 15px #558564 ridge; */
 }
 #navItemDiv {
   overflow: hidden;
@@ -42,7 +41,6 @@ li>a {
 ul:nth-child(1){
   text-align: start;
 }
- 
 ul>li:nth-of-type(2){
   text-align: right;
 }
@@ -52,7 +50,7 @@ header {
   font-size: 350%;
   width: 400px;
   height: 70px;
-  margin: auto;
+  margin: 37px auto 0px;
   text-align: center;
   background: #216869;
   text-shadow: 1px 1px white;
@@ -69,16 +67,11 @@ h1 {
   -1px  1px 0 #000,
   1px  1px 0 #000;
   font-style: italic;
-  /* border-right: 3px ridge goldenrod;
-  border-left: 3px ridge goldenrod;
-  border-bottom: 3px ridge goldenrod; */
 }
 #mainBodyDiv{
   width: 960px;
   height: 450px;
   margin: 10px auto auto auto;
-  /* box-shadow: 10px 10px grey, 10px 10px grey; */
-  /* border: 100px solid goldenrod; */
   background-image: url(http://www.maharajatravels.in/wp-content/uploads/2015/02/underwater-bg.jpg);
   background-size: 990px 500px;
   font-size: 170%;
@@ -93,26 +86,41 @@ h1 {
   border-radius: 5px;
   padding: 1%
 }
-
-/* div img {
-    width: 960px;
-    height: 500px;
-} */
 #buttonsDiv {
     width: 960px;
-    margin: 15px auto auto auto;
+    margin: 0px auto auto auto;
     text-align: center;
 }
 button {
   background: coral;
-  /* margin: auto; */
   width: 200px;
   height: 50px;
   font-size: 105%;
-  /* margin-left: 3px; */
-  margin-top: 40px;
+  margin-top: 20px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  line-height: 32px;
+}
+/* button 'shine' effect, thanks to https://cssanimation.rocks */
+button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+button:hover::after, button:focus::after {
+  animation: sheen 1s forwards;
+}
+@keyframes sheen {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
 }
 a {
   text-decoration: none;
@@ -131,6 +139,8 @@ button:hover {
 }
 #instructions h4 {
   font-family: 'Lobster', cursive;
+  font-size: 2em;
+  padding: 10px;
 }
 #noMarginP {
   margin-bottom: 0px;
@@ -148,6 +158,10 @@ width: 400px;
   float: right;
   width: 400px;
 }
+.topMargined {
+  margin-top: 20px;
+}
 .floatImg {
   float:left;
 }
+

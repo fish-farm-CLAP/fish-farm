@@ -136,7 +136,6 @@ function mousePressed() {
       mouseY < (Fish.all[i].yPosition + fishHeight)) {
       //Fish.all[i] has been clicked on, execute the code below:
       Fish.all[i].feedFish();
-      console.log('fed a fish');
     }
   }
 
