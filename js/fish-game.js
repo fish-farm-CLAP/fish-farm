@@ -3,8 +3,10 @@ var canvasHeight = 450;
 var fishLength = 100;
 var fishHeight = 50;
 
+// the different fish types. Stores the different sprites
 var goldfish;
 var cracker;
+var salmon;
 
 var canvasDiv = document.getElementById('canvasDiv');
 
@@ -33,6 +35,15 @@ function setup() {
     fishDeadReversed: loadImage('assets/cracker-Dead-Reversed.png'),
   };
 
+  salmon = {
+    fishPic: loadImage('assets/salmon.png'),
+    fishPicReversed: loadImage('assets/salmon-Reversed.png'),
+    fishHungry: loadImage('assets/salmon-hungry.png'),
+    fishHungryReversed: loadImage('assets/salmon-hungry-Reversed.png'),
+    fishDead: loadImage('assets/salmon-dead.png'),
+    fishDeadReversed: loadImage('assets/salmon-dead-Reversed.png'),
+  };
+
 }
 
 function draw() {
@@ -46,6 +57,8 @@ function draw() {
         Fish.all[i].fishType = cracker;
       } else if (Fish.all[i].fishType === 'goldfish') {
         Fish.all[i].fishType = goldfish;
+      } else if (Fish.all[i].fishType === 'salmon') {
+        Fish.all[i].fishType = salmon;
       } else {
         Fish.all[i].fishType = goldfish;
       }
