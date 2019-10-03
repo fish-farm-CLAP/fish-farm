@@ -27,6 +27,7 @@ a {
      1px  1px 0 #000;
      font-size: 2em;
      font-family: 'Courier New', Courier, monospace;
+     font-weight: bolder;
 }
 ul:nth-child(1){
     text-align: start;

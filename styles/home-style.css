@@ -42,7 +42,6 @@ li>a {
 ul:nth-child(1){
   text-align: start;
 }
- 
 ul>li:nth-of-type(2){
   text-align: right;
 }
@@ -52,7 +51,7 @@ header {
   font-size: 350%;
   width: 400px;
   height: 70px;
-  margin: auto;
+  margin: 37px auto 0px;
   text-align: center;
   background: #216869;
   text-shadow: 1px 1px white;
@@ -93,14 +92,9 @@ h1 {
   border-radius: 5px;
   padding: 1%
 }
-
-/* div img {
-    width: 960px;
-    height: 500px;
-} */
 #buttonsDiv {
     width: 960px;
-    margin: 15px auto auto auto;
+    margin: 0px auto auto auto;
     text-align: center;
 }
 button {
@@ -110,7 +104,7 @@ button {
   height: 50px;
   font-size: 105%;
   /* margin-left: 3px; */
-  margin-top: 40px;
+  margin-top: 20px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
 }
@@ -131,6 +125,8 @@ button:hover {
 }
 #instructions h4 {
   font-family: 'Lobster', cursive;
+  font-size: 2em;
+  padding: 10px;
 }
 #noMarginP {
   margin-bottom: 0px;
@@ -147,6 +143,9 @@ width: 400px;
 #rightInstructions {
   float: right;
   width: 400px;
+}
+.topMargined {
+  margin-top: 20px;
 }
 .floatImg {
   float:left;
