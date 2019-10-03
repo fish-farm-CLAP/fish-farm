@@ -8,7 +8,6 @@ console.log('starteventjs');
 // };
 var eventRun = document.getElementById('randomEventDiv');
 var eventText = document.createElement('p');
-eventText.textContent = 'random event';
 eventRun.appendChild(eventText);
 
 
