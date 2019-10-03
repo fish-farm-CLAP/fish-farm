@@ -2,12 +2,12 @@ var canvasWidth = 960;
 var canvasHeight = 450;
 var fishLength = 100;
 var fishHeight = 50;
-
+var canvasDiv = document.getElementById('canvasDiv');
 
 
 function setup() {
-  createCanvas(canvasWidth, canvasHeight);
-
+  var canvas = createCanvas(canvasWidth, canvasHeight);
+  canvas.parent(canvasDiv);
   backgroundImg = loadImage('assets/underwater.jpg');
   goldfishPic = loadImage('assets/goldfish-100px.png');
   goldfishPicReversed = loadImage('assets/goldfish-100pxReversed.png');
