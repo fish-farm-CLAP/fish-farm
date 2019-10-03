@@ -73,9 +73,17 @@ img {
     font-family: 'Lalezar', cursive;
     font-size: 22px;
     margin-left: 140px;
-    padding: 20px;
+    padding: 14px;
+    border: lime solid 3px;
 }
+#lucasSection img {
+    border: lime solid 3px;
+    border-radius: 60px;
+}
+<<<<<<< HEAD
 
+=======
+>>>>>>> ea2fe9e0d56ad9074af4972b9232f99dd28550f1
 #chrisSection p{
   font-size: 20px;
   font-family: 'Righteous', cursive;
@@ -88,6 +96,10 @@ img {
   border: coral solid 3px;
   border-radius: 60px;
 }
+#austinSection img {
+  border: hotpink solid 3px;
+  border-radius: 60px;
+}
 
 #austinSection p {
     background: rgba(0, 0, 0, 0.623);
@@ -97,6 +109,7 @@ img {
     border:5px outset #4652a6;
     padding: 2%
 }
+<<<<<<< HEAD
 
 #paulSection p {
    background-color: rgba(26, 41, 65, 0.726);
@@ -108,3 +121,5 @@ img {
    font-family: 'Vollkorn SC', serif;
 
   }
+=======
+>>>>>>> ea2fe9e0d56ad9074af4972b9232f99dd28550f1
