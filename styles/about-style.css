@@ -73,9 +73,13 @@ img {
     font-family: 'Lalezar', cursive;
     font-size: 22px;
     margin-left: 140px;
-    padding: 20px;
+    padding: 14px;
+    border: lime solid 3px;
 }
-
+#lucasSection img {
+    border: lime solid 3px;
+    border-radius: 60px;
+}
 #chrisSection p{
   font-size: 20px;
   font-family: 'Righteous', cursive;
