@@ -19,3 +19,5 @@ Game Overview:
 User Stories: https://docs.google.com/document/d/1j5RZY6TRFUzcjTc_3r-D8GJ6wO4n88DOJ6uwv616IDM/edit?usp=sharing
 
 [Requirements](./requirements.md)
+
+All images used on the site were taken from a "free to use and share" google search. All sound effects were taken from freesound.org.
