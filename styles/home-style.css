@@ -14,7 +14,6 @@ body {
   margin: 2% auto auto auto;
   width: 960px;
   background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg);
-  /* border: 15px #558564 ridge; */
 }
 #navItemDiv {
   overflow: hidden;
@@ -68,16 +67,11 @@ h1 {
   -1px  1px 0 #000,
   1px  1px 0 #000;
   font-style: italic;
-  /* border-right: 3px ridge goldenrod;
-  border-left: 3px ridge goldenrod;
-  border-bottom: 3px ridge goldenrod; */
 }
 #mainBodyDiv{
   width: 960px;
   height: 450px;
   margin: 10px auto auto auto;
-  /* box-shadow: 10px 10px grey, 10px 10px grey; */
-  /* border: 100px solid goldenrod; */
   background-image: url(http://www.maharajatravels.in/wp-content/uploads/2015/02/underwater-bg.jpg);
   background-size: 990px 500px;
   font-size: 170%;
@@ -99,11 +93,9 @@ h1 {
 }
 button {
   background: coral;
-  /* margin: auto; */
   width: 200px;
   height: 50px;
   font-size: 105%;
-  /* margin-left: 3px; */
   margin-top: 20px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
