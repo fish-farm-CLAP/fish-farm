@@ -75,4 +75,15 @@ img {
     margin-left: 140px;
     padding: 20px;
 }
-
+#chrisSection p{
+  font-size: 20px;
+  font-family: 'Righteous', cursive;
+  background-color: rgba(0, 83, 83, 0.582);
+  color:rgb(255, 127, 80);
+  margin-left: 140px;
+  padding: 10px;
+}
+#chrisSection img {
+  border: coral solid 3px;
+  border-radius: 60px;
+}
