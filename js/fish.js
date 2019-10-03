@@ -128,6 +128,7 @@ function hunger() {
 
   for (var i = 0; i < Fish.all.length; i++) {
 
+    //Should be set to 20
     Fish.all[i].saturation -= randomNum(20);
 
     if (Fish.all[i].saturation <= 0) {
