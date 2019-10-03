@@ -58,7 +58,7 @@ var noFood = function(){
 
 var zombie = function(){
   eventText.textContent = 'One of your fish turned into a zombie and ate eat the brain of another fish. You\'re down two fish!';
-  if (Fish.all.length <= 3){
+  if (Fish.all.length >= 3){
     killxFish(2);
   }
 };
