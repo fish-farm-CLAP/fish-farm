@@ -13,6 +13,7 @@ var foodDisplay = document.getElementById('currentFood');
 var highScoreDisplay = document.getElementById('highScore');
 var buyFishButton = document.getElementById('buyFish');
 var buyFoodButton = document.getElementById('buyFood');
+var eventBar = document.getElementById('eventBar');
 var gameHasEnded = false;
 var highScore = 0;
 
@@ -61,10 +62,12 @@ function tick() {
 
       choiceGeni();
       newEvent = 0;
+      eventBar.style.width = 0 + '%';
 
     } else {
 
       newEvent++;
+      eventBar.style.width = Math.round((newEvent / 120) * 100) + '%';
 
     }
 
@@ -99,11 +102,13 @@ function saveScore() {
 //Create a new fish either at game start or when the user buys one
 function newFish() {
 
-  var rand = randomNum(30);
+  var rand = randomNum(40);
 
   if (rand === 1) {
     new Fish('cracker');
-  } else {
+  } else if (rand === 2) {
+    new Fish('salmon');
+  }else {
     new Fish('goldfish');
   }
 
