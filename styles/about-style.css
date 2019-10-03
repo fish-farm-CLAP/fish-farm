@@ -57,7 +57,17 @@ h1 {
     1px  1px 0 #000;
     font-style: italic;
 }
-
+section {
+    width: 960px;
+    height: 120px;
+    margin-top: 30px;
+}
 img {
-    width: 100px;
+    width: 120px;
+    float: left;
+    border-radius: 60px;
+}
+#lucasSection {
+    background-color: black;
+    color: white;
 }
