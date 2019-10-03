@@ -13,6 +13,7 @@ var foodDisplay = document.getElementById('currentFood');
 var highScoreDisplay = document.getElementById('highScore');
 var buyFishButton = document.getElementById('buyFish');
 var buyFoodButton = document.getElementById('buyFood');
+var eventBar = document.getElementById('eventBar');
 var gameHasEnded = false;
 var highScore = 0;
 
@@ -40,6 +41,7 @@ function setUp() {
 
   //Start the game loop
   setInterval(tick, 250);
+  setInterval(playThemeSong, 0);
 
 }
 
@@ -60,10 +62,12 @@ function tick() {
 
       choiceGeni();
       newEvent = 0;
+      eventBar.style.width = 0 + '%';
 
     } else {
 
       newEvent++;
+      eventBar.style.width = Math.round((newEvent / 120) * 100) + '%';
 
     }
 
@@ -84,9 +88,9 @@ function loadGame() {
 
   }
   //Make 2 fish at the start of the game
-  new Fish();
-  new Fish();
-  new Fish();
+  newFish();
+  newFish();
+  newFish();
 
 }
 
@@ -97,12 +101,16 @@ function saveScore() {
 
 //Create a new fish either at game start or when the user buys one
 function newFish() {
-  //Get a new fish image
-  //var randomIndex = randomNum(images.length);
-  //need more fish images
 
-  //creat new fish object
-  new Fish();
+  var rand = randomNum(40);
+
+  if (rand === 1) {
+    new Fish('cracker');
+  } else if (rand === 2) {
+    new Fish('salmon');
+  }else {
+    new Fish('goldfish');
+  }
 
 }
 
@@ -118,6 +126,7 @@ function buyFood() {
 
   } else {
 
+    errorSound.play();
     //Tell the user they are short on cash
 
   }
@@ -132,10 +141,11 @@ function buyFish() {
   if (gameVariables.money >= 50) {
 
     gameVariables.money -= 50;
-    new Fish();
+    newFish();
 
   } else {
 
+    errorSound.play();
     //Inform user they are short on cash
 
   }
@@ -182,6 +192,7 @@ function checkIfAllFishAreDead() {
   //compare the amount to the total number of fish
   if (numberOfDeadFish === Fish.all.length) {
     gameOver();
+    gameOverSound.play();
   }
 }
 
@@ -193,7 +204,7 @@ function gameOver() {
   var messageDisplayBox = document.createElement('form');
   gameArea.appendChild(messageDisplayBox);
   var youLose = document.createElement('h6');
-  youLose.textContent = 'You have o-fish-ally LOST the game!';
+  youLose.textContent = 'You have o-fish-ially LOST the game!';
   messageDisplayBox.appendChild(youLose);
   //Remove the buy buttons
   buyFishButton.removeEventListener('click', buyFish);
@@ -214,6 +225,8 @@ function newGame() {
 
 buyFishButton.addEventListener('click', buyFish);
 buyFoodButton.addEventListener('click', buyFood);
+
+
 
 
 

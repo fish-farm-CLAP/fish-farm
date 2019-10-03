@@ -1,5 +1,5 @@
 * {
-    outline: 1px solid rgb(245, 40, 4);
+    /* outline: 1px solid rgb(245, 40, 4); */
 }
 body {
   background-image: url(https://storage.googleapis.com/needpix-storage/rsynced_items/seamless-blue-rock-stone-background.jpg); 
@@ -24,11 +24,12 @@ a {
     -1px  1px 0 #000,
      1px  1px 0 #000;
      font-size: 2em;
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: bolder;
 }
 ul:nth-child(1){
     text-align: start;
 }
- 
 ul>li:nth-of-type(2){
     text-align: right;
 }
@@ -48,8 +49,60 @@ h1 {
     width: 230px;
     margin: auto;
     text-align: center;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px  1px 0 #000,
+    1px  1px 0 #000;
     font-style: italic;
 }
-img {
-    width: 100px;
+section {
+    width: 960px;
+    height: 120px;
+    margin-top: 30px;
 }
+img {
+    width: 120px;
+    float: left;
+    border-radius: 60px;
+}
+#lucasSection p {
+    background-color: rgba(0, 0, 0, 0.664);
+    color: rgb(240, 240, 240);
+    font-family: 'Lalezar', cursive;
+    font-size: 22px;
+    margin-left: 140px;
+    padding: 14px;
+    border: lime solid 3px;
+}
+#lucasSection img {
+    border: lime solid 3px;
+    border-radius: 60px;
+}
+#chrisSection p{
+  font-size: 20px;
+  font-family: 'Righteous', cursive;
+  background-color: rgba(0, 83, 83, 0.582);
+  color:rgb(255, 127, 80);
+  margin-left: 140px;
+  padding: 10px;
+}
+#chrisSection img {
+  border: coral solid 3px;
+  border-radius: 60px;
+}
+#austinSection img {
+  border: hotpink solid 3px;
+  border-radius: 60px;
+}
+
+#austinSection p {
+    background: rgba(0, 0, 0, 0.623);
+    margin-left: 140px;
+    font-family: 'Courier New', Courier, monospace;
+    color: goldenrod;
+    border:5px outset #4652a6;
+    padding: 2%
+}
+
