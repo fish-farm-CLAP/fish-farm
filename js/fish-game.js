@@ -21,14 +21,14 @@ function setup() {
     fishDeadReversed: loadImage('assets/goldfish-100px-dead-reversed.png'),
   };
 
-  // cracker = {
-  //   fishPic: loadImage('Cracker.png'),
-  //   fishPicReversed: loadImage('Cracker-Reversed.png'),
-  //   fishHungry: loadImage('Cracker-Hungry.png'),
-  //   fishHungryReversed: loadImage('Cracker-Hungry-Reversed.png'),
-  //   fishDead: loadImage('Cracker-Dead.png'),
-  //   fishDeadReversed: loadImage('Cracker.Dead-Reverse.png'),
-  // };
+  cracker = {
+    fishPic: loadImage('Cracker.png'),
+    fishPicReversed: loadImage('Cracker-Reversed.png'),
+    fishHungry: loadImage('Cracker-Hungry.png'),
+    fishHungryReversed: loadImage('Cracker-Hungry-Reversed.png'),
+    fishDead: loadImage('Cracker-Dead.png'),
+    fishDeadReversed: loadImage('Cracker.Dead-Reverse.png'),
+  };
 
 }
 
